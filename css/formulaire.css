@@ -1,16 +1,45 @@
 
 .formulaire{
-    border: 1px solid #111;
-    padding: 20px 20px;
+    border: thick double rgba(54, 61, 148, 0.993);
+    padding: 15px 15px;
     width: 500px;
     height: auto;
     position: relative;
     left: 35%;
-    top: 200px;
+    top: 5px;
 }
 
 .formulaire form{
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.formulaire h2{
+    text-align: center;
+    color: rgba(54, 61, 148, 0.993);
+}
+
+.link-logo{
+    position: relative;
+    top: 5px;
+    left: 45%;
+}
+
+.black-office li{
+    list-style: none;
+    width: 140px; 
+    border-radius: 5px;
+}
+
+.black-office a{
+    text-decoration: none;
+    border-radius: 5px;
+    color: #c5c5c5;
+    height: 30px;
+    background-color: rgba(54, 61, 148, 0.993);
+}
+
+.black-office a:hover{
+    color:white;
 }
 

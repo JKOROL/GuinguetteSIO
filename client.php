@@ -1,6 +1,6 @@
 
 <?php 
-$bdd = new PDO('mysql:host=localhost;dbname=guinguette;charset=utf8','root','');
+$bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','root','');
 
 if(isset($_POST["button"]))
 {
@@ -48,12 +48,20 @@ $test_dispo = $bdd->query($filtre_dispo);
     <title>Document</title>
 </head>
 <body>
-<li><a href="backoffice.php">Retour au back office</a></li>
+    <ul class="black-office">
+        <li>
+            <a href="backoffice.php" class="black-office">Retour au back office</a>
+        </li>
+    </ul>
+<a href="index.php" class="link-logo">
+    <img class="home-logo" src="images/logo.png" alt="Homepage">
+</a>
 <div class="formulaire">
+    <h2>Formulaire de Réservation</h2>
     <form action="client.php" method="POST">
         <p>
-            <label for="nom"> Nom: <input type="text" name="nom" id="nom" required></label>
-            <label for="tel"> Telephone: <input type="text" name="tel" id="tel" required></label> 
+            <label for="nom"> Nom: <input class="input-admin" type="text" name="nom" id="nom" required></label>
+            <label for="tel"> Telephone: <input class="input-admin" type="text" name="tel" id="tel" required></label> 
         </p><!-- règle de gestion à ajouter pour numéro de telephone -->
         <p><br>
             <label for="NbClient"> Nombre de Client:  <select name="NbClient" id="NbClient">
@@ -94,9 +102,9 @@ $test_dispo = $bdd->query($filtre_dispo);
                 }
             ?></select>
         </div>
-        <input type="button" id="AjoutTable" value="+"></input>
-        <input type="button" id="SuppTable" value="-"></input>
-        <input type="submit" name="button" id="button" value="Envoyer">
+        <input class="input-admin" type="button" id="AjoutTable" value="+"></input>
+        <input class="input-admin" type="button" id="SuppTable" value="-"></input>
+        <input class="input-admin" type="submit" name="button" id="button" value="Envoyer">
     </form>
 
 </div>
