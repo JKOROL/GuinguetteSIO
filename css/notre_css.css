@@ -1,0 +1,142 @@
+
+#about{
+    background-color: #0F0F0F;
+}
+
+.Logo{
+    max-width: 70%;
+    height: auto;
+}
+.item-process__text
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.LienAbout{
+    width: min-content;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-content,#home{
+    z-index: 0;
+}
+
+.col-block{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    bottom: 50px;
+    z-index: 1 !important;
+}
+.item-process__text{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Lien{
+    font-size: 5em;
+}
+
+.ActuTitre{
+    text-align: center;
+}
+
+#Actu1{
+    display: block;
+}
+
+#Actu2,#Actu3{
+    display: none;
+}
+
+.Fleche{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 300px;
+    margin: 0;
+}
+
+.Actu{
+    width: 25%;
+    height: auto;
+}
+
+#Carrousel{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+    height: 700px;
+}
+
+.LienFleche{
+    width: 20%;
+    height: auto;
+    margin: 15px;
+
+}
+
+
+.Guide-routard{
+    width: 300px;
+    height: auto;
+}
+
+.loire-a-velo{
+    width: 300px;
+    height: auto;
+    margin-top: 100px;
+}
+
+.Partenaire
+{
+    display: flex;
+    justify-content: center;
+}
+.col-3{
+    margin: 0 auto;
+    text-align: center;
+    font-size: large;
+}
+
+.col-3 p{
+    font-size: 31px;
+    color: blue;
+    font-family:Georgia, 'Times New Roman', Times, sans-serif;
+}
+
+#mapid { 
+    height: 500px;
+    width: 500px;
+    z-index: 0;
+    margin-left: 30px;
+ }
+#clients{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    font-family: 'Montserrat';
+}
+
+.horraire{
+   
+    margin: auto 0;
+}
+
+.img_hand{
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+/*CSS pour les formulaire */
+
+
+ 
+/* reanier les 2 bloc pour qu'il soient plus allonger verticalement et mettre 

@@ -1,0 +1,16 @@
+
+.formulaire{
+    border: 1px solid #111;
+    padding: 20px 20px;
+    width: 500px;
+    height: auto;
+    position: relative;
+    left: 35%;
+    top: 200px;
+}
+
+.formulaire form{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
