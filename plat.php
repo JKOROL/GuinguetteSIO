@@ -1,5 +1,5 @@
 <?php 
-$bdd = new PDO('mysql:host=localhost;dbname=guinguette;charset=utf8','root','');
+$bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','root','');
 if(isset($_POST))
 {
     if(isset($_POST["libelle_plat"]) && isset($_POST["prix"]))
@@ -24,20 +24,31 @@ else
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/formulaire.css">
+
     <title>Document</title>
 </head>
 <body>
     
 
-
-<li><a href="backoffice.php">Retour au back office</a></li>
+<ul class="black-office">
+        <li>
+            <a href="backoffice.php" class="black-office">Retour au back office</a>
+        </li>
+    </ul>
+<a href="index.php" class="link-logo">
+    <img class="home-logo" src="images/logo.png" alt="Homepage">
+</a>
 <div class="formulaire">
-    <form action="plat.php" method="POST"  class="formulaire">
-        <label for="libellé">Libellé:  <input type="text" name="libelle_plat" id="libellé_plat"></label><br>
-        <label for="photo">Photo: <input type="file" name="photo" id="photo" accept ="image/png, image/jpg"></label><br>
-        <label for="prix">Prix:  <input type="text" name="prix" id="prix"></label><br>
-        <input type="submit" name="button" id="button" value="Envoyer">
-
+    <form action="plat.php" method="POST">
+        <h2>Ajouter Plat</h2>
+        <div class="flex-form">
+            <label for="libellé">Libellé:  <input class="input-admin" type="text" name="libelle_plat" id="libellé_plat"></label>
+            <label for="photo">Photo: <input class="input-admin" type="file" name="photo" id="photo" accept ="image/png, image/jpg"></label>
+        </div><br>
+        <label for="prix">Prix:  <input class="input-admin" type="text" name="prix" id="prix"></label><br>
+        <input class="form-button" type="submit" name="button" id="button" value="Envoyer">
     </form>
 </div>
 
