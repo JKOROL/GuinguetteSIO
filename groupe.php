@@ -1,5 +1,5 @@
 <?php 
-$bdd = new PDO('mysql:host=localhost;dbname=guinguette;charset=utf8','root','');
+$bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','root','');
 
 if(isset($_POST["button"]))
 {
@@ -47,16 +47,20 @@ $test_dispo = $bdd->query($filtre_dispo);
     <title>Document</title>
 </head>
 <body>
-<li><a href="backoffice.php">Retour au back office</a></li>
-
+<?php require("backoffice.php"); ?>
+<a href="index.php" class="link-logo">
+    <img class="home-logo" src="images/logo.png" alt="Homepage">
+</a>
 <div class="formulaire">
+    <h2>Formulaire de Réservation Groupe</h2>
     <form action="groupe.php" method="POST">
         <p>
-            <label for="nom"> Nom: <input type="text" name="nom" id="nom" required></label>
-            <label for="tel"> Telephone: <input type="text" name="tel" id="tel" required></label> <!-- règle de gestion à ajouter pour numéro de telephone -->
+            <label for="nom"> Nom: <input class="input-admin" type="text" name="nom" id="nom" required></label>
+            <label for="tel"> Telephone: <input class="input-admin" type="text" name="tel" id="tel" required></label> <!-- règle de gestion à ajouter pour numéro de telephone -->
             
         </p>
-            <label for="NbClient"> Nombre de Client:  <select name="NbClient" id="NbClient">
+        <div class="flex-form">
+            <p><label for="NbClient"> Nombre de Client:  <select class="input-admin" name="NbClient" id="NbClient"></p>
             <?php
             $compteur = 20;
             for( $compteur; $compteur<51; $compteur++){
@@ -64,34 +68,39 @@ $test_dispo = $bdd->query($filtre_dispo);
             }
             ?>
             </select></label><br>
-        <p><label for="NbVehicule"> Nombre de Véhicule: <select name="NbVehicule" id="NbVehicule"></p>
+            <p><label for="NbVehicule"> Nombre de Véhicule: <select class="input-admin" name="NbVehicule" id="NbVehicule"></p>
             <?php
             $compteur = 1;
             for( $compteur; $compteur<20; $compteur++){
                 echo  "<option value =".$compteur.">".$compteur."</option>";
             }
             ?></select></label>
-        <p><label for="NbHandi"> Nombre d'Handicapé: 
-            <select name="NbHandi" id="NbHandi">
-            <?php
-            $compteur = 0;
-            for( $compteur; $compteur<20; $compteur++){
-                echo  "<option value =".$compteur.">".$compteur."</option>";
-            }
-            ?></select></label></p><br>
-        <p><label for="Allergene"> Allergie: <input type="text" name="Allergene" id="Allergene"></label></p>
-        <div id="Table">
-            <label for="IdTable"> Numéro de table : <select name="IdTable" id="IdTable0"> <!--Disponible = 1 | indisponible = 0--> 
-            <?php
-                while($row=$test_dispo->fetch())
-                {
-                    echo "<option value =".$row[0].">".$row[0]. " - ".$row[1]." places </option>";
-                }
-            ?></select></label>
         </div>
-        <input type="button" id="AjoutTable" value="+"></input>
-        <input type="button" id="SuppTable" value="-" disabled></input> <br>
-        <input type="submit" name="button" id="button" value="Envoyé">
+        <div class="flex-form">
+            <p><label for="NbHandi"> Nombre d'Handicapé: 
+                <select class="input-admin" name="NbHandi" id="NbHandi">
+                <?php
+                $compteur = 0;
+                for( $compteur; $compteur<20; $compteur++){
+                    echo  "<option value =".$compteur.">".$compteur."</option>";
+                }
+                ?></select></label></p><br>
+            <p><label for="Allergene"> Allergie: <input class="input-admin" type="text" name="Allergene" id="Allergene"></label></p>
+        </div>
+            <div id="Table">
+                <label for="IdTable"> Numéro de table : <select class="input-admin" name="IdTable" id="IdTable0"> <!--Disponible = 1 | indisponible = 0--> 
+                <?php
+                    while($row=$test_dispo->fetch())
+                    {
+                        echo "<option value =".$row[0].">".$row[0]. " - ".$row[1]." places </option>";
+                    }
+                ?></select></label>
+            </div><br>
+        <div class="plus-moin">
+            <input type="button" id="AjoutTable" value="+"></input>
+            <input type="button" id="SuppTable" value="-" disabled></input> 
+        </div>
+        <input class="form-button" type="submit" name="button" id="button" value="Envoyé">
     </form>
 </div>
 
