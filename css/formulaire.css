@@ -1,8 +1,8 @@
 
 
 .formulaire{
-    border: 5px solid rgb(0, 13, 255);
-    background-color: orange;
+    border: 5px solid #B07E4A;
+    background-color: black;
     padding: 15px 15px;
     width: 500px;
     height: auto;
@@ -18,14 +18,14 @@
 }
 
 .formulaire select{
-    border-color:rgb(0, 13, 255);
+    border-color:#B07E4A;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 .formulaire h2{
     text-align: center;
-    color: rgb(0, 13, 255);
+    color: white;
     text-decoration: underline;
 }
 
@@ -36,14 +36,14 @@
 }
 
 .input-admin{
-    border-color: rgb(0, 13, 255);
+    border-color: #B07E4A;
     margin-right: 10px;
 }
 
 .form-button{
     width: 150px;
     margin-top: 10px;
-    background-color: blue;
+    background-color: #B07E4A;
     color: wheat;
     position: relative;
     left: 33%;
@@ -85,7 +85,7 @@
 }
 
 .backoffice nav{
-    background-color: blue;
+    background-color: black;
 }
 
 .backoffice a{
@@ -102,4 +102,21 @@
 .backoffice li
 {
     list-style: none;
+}
+
+.ul-backoffice{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+body{
+    margin: 0;
+    background-color: #5E3080;
+}
+
+label{
+    color: white;
 }

@@ -31,11 +31,7 @@ else
 </head>
 <body>
     
-<ul class="black-office">
-    <li>
-        <a href="backoffice.php" class="black-office">Retour au back office</a>
-    </li>
-</ul>
+<?php require("backoffice.php"); ?>
 <a href="index.php" class="link-logo">
     <img class="home-logo" src="images/logo.png" alt="Homepage">
 </a>

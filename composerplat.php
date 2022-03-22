@@ -32,7 +32,7 @@ if(isset($_POST["button"]))
     <title>Document</title>
 </head>
 <body>
-<li><a href="backoffice.php">Retour au back office</a></li>
+<?php require("backoffice.php"); ?>
 <a href="index.php" class="link-logo">
     <img class="home-logo" src="images/logo.png" alt="Homepage">
 </a>
