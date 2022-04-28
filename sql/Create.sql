@@ -17,17 +17,6 @@ CREATE TABLE Ingredient(
    PRIMARY KEY(IdIngredient)
 );
 
-CREATE TABLE Client(
-   IdClient INT,
-   Nom VARCHAR(50),
-   NbClient INT,
-   Telephone VARCHAR(15),
-   NbVehicules INT,
-   NbPHandicape INT,
-   Allergene VARCHAR(50),
-   PRIMARY KEY(IdClient)
-);
-
 CREATE TABLE Animation(
    IdAnimation INT,
    Poster VARCHAR(50),
@@ -45,7 +34,7 @@ CREATE TABLE Tables(
    PRIMARY KEY(IdTable)
 );
 
-CREATE TABLE Utilisateurs(
+CREATE TABLE Utilisateur(
    idUtilisateur INT,
    Email VARCHAR(50),
    Password VARCHAR(50),
@@ -60,6 +49,19 @@ CREATE TABLE Plat(
    IdCategorie INT NOT NULL,
    PRIMARY KEY(IdPlat),
    FOREIGN KEY(IdCategorie) REFERENCES CategoriePlat(IdCategorie)
+);
+
+CREATE TABLE Reservation(
+   IdReservation INT,
+   Nom VARCHAR(50),
+   NbClient INT,
+   Telephone VARCHAR(15),
+   NbVehicules INT,
+   NbPHandicape INT,
+   Allergene VARCHAR(50),
+   idUtilisateur INT NOT NULL,
+   PRIMARY KEY(IdReservation),
+   FOREIGN KEY(idUtilisateur) REFERENCES Utilisateur(idUtilisateur)
 );
 
 CREATE TABLE Composer(
@@ -79,25 +81,25 @@ CREATE TABLE Contenir(
 );
 
 CREATE TABLE Reserver(
-   IdClient INT,
+   IdReservation INT,
    IdTable INT,
-   PRIMARY KEY(IdClient, IdTable),
-   FOREIGN KEY(IdClient) REFERENCES Client(IdClient),
+   PRIMARY KEY(IdReservation, IdTable),
+   FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation),
    FOREIGN KEY(IdTable) REFERENCES Tables(IdTable)
 );
 
 CREATE TABLE Choisir(
    IdMenu INT,
-   IdClient INT,
-   PRIMARY KEY(IdMenu, IdClient),
+   IdReservation INT,
+   PRIMARY KEY(IdMenu, IdReservation),
    FOREIGN KEY(IdMenu) REFERENCES Menu(IdMenu),
-   FOREIGN KEY(IdClient) REFERENCES Client(IdClient)
+   FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation)
 );
 
 CREATE TABLE Consommer(
    IdPlat INT,
-   IdClient INT,
-   PRIMARY KEY(IdPlat, IdClient),
+   IdReservation INT,
+   PRIMARY KEY(IdPlat, IdReservation),
    FOREIGN KEY(IdPlat) REFERENCES Plat(IdPlat),
-   FOREIGN KEY(IdClient) REFERENCES Client(IdClient)
+   FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation)
 );
