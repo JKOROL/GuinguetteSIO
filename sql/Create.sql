@@ -59,9 +59,9 @@ CREATE TABLE Reservation(
    NbVehicules INT,
    NbPHandicape INT,
    Allergene VARCHAR(50),
-   idUtilisateur INT NOT NULL,
+   IdUtilisateur INT NOT NULL,
    PRIMARY KEY(IdReservation),
-   FOREIGN KEY(idUtilisateur) REFERENCES Utilisateur(idUtilisateur)
+   FOREIGN KEY(IdUtilisateur) REFERENCES Utilisateur(IdUtilisateur)
 );
 
 CREATE TABLE Composer(
