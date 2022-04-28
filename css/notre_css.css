@@ -140,3 +140,11 @@
 
  
 /* reanier les 2 bloc pour qu'il soient plus allonger verticalement et mettre 
+
+/** button réservation **/
+.reservation{
+    margin-top: 70px;
+}
+.reservation button{
+    border-radius: 20px;
+}

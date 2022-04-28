@@ -60,8 +60,10 @@ body{
 }
 
 .flex{
-    display: flex;
+    grid-template-columns: repeat(2,1fr);
+    display: grid;
     justify-content: center;
+    grid-gap: 20px;
 }
 
 .carte{
@@ -69,6 +71,7 @@ body{
     border: 1px solid #feefe2;
     border-radius: 10px;
     width: 450px;
+    margin: auto;
 }
 
 .carte h2{
@@ -90,12 +93,10 @@ body{
 
 .carte li::after{
     display: block;
-    position: absolute;
     content: "";
     height: 2px;
     background-color: black;
-    width: 28%;
-    right: 36%;
+    width: 100%;
 }
 
 .carte li span{

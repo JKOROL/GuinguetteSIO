@@ -51,10 +51,14 @@ $bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','ro
 </div>
 <div class="flex">
     <div class="carte">
-    <h2>Pour commencer</h2>
+    <h2>
+        <?php $title = $bdd->query("SELECT IdCatPlat, nom FROM menucategorie WHERE IdCatPlat=1")-> fetch();
+        echo $title[1];
+        ?>
+    </h2>
     <ul>
         <?php 
-        $req = $bdd->query("SELECT * FROM plat");
+        $req = $bdd->query("SELECT * FROM plat WHERE IdCatePlat=2");
         while($row = $req->fetch())
         {
             ?>
@@ -64,8 +68,99 @@ $bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','ro
         ?>
     </ul>
     </div>
-</div>
+    
+    <div class="carte">
+    <h2> 
+        <?php $title = $bdd->query("SELECT IdCatPlat, nom FROM menucategorie WHERE IdCatPlat=2")-> fetch();
+        echo $title[1];
+        ?></h2>
+    <ul>
+        <?php 
+        $req = $bdd->query("SELECT * FROM plat WHERE IdCatePlat=2");
+        while($row = $req->fetch())
+        {
+            ?>
+            <li><?php echo $row[3]?><span><?php echo $row[1]." €";?></span></li>
+            <?php
+        }
+        ?>
+    </ul>
+    </div>
 
+    <div class="carte">
+    <h2> 
+        <?php $title = $bdd->query("SELECT IdCatPlat, nom FROM menucategorie WHERE IdCatPlat=3")-> fetch();
+        echo $title[1];
+        ?></h2>
+    <ul>
+        <?php 
+        $req = $bdd->query("SELECT * FROM plat WHERE IdCatePlat=3");
+        while($row = $req->fetch())
+        {
+            ?>
+            <li><?php echo $row[3]?><span><?php echo $row[1]." €";?></span></li>
+            <?php
+        }
+        ?>
+    </ul>
+    </div>
+
+    <div class="carte">
+    <h2> 
+        <?php $title = $bdd->query("SELECT IdCatPlat, nom FROM menucategorie WHERE IdCatPlat=4")-> fetch();
+        echo $title[1];
+        ?> </h2>
+    <ul>
+        <?php 
+        $req = $bdd->query("SELECT * FROM plat WHERE IdCatePlat=4");
+        while($row = $req->fetch())
+        {
+            ?>
+            <li><?php echo $row[3]?><span><?php echo $row[1]." €";?></span></li>
+            <?php
+        }
+        ?>
+    </ul>
+    </div>
+
+    <div class="carte">
+    <h2> 
+        <?php $title = $bdd->query("SELECT IdCatPlat, nom FROM menucategorie WHERE IdCatPlat=5")-> fetch();
+        echo $title[1];
+        ?> </h2>
+    <ul>
+        <?php 
+        $req = $bdd->query("SELECT * FROM plat WHERE IdCatePlat=5");
+        while($row = $req->fetch())
+        {
+            ?>
+            <li><?php echo $row[3]?><span><?php echo $row[1]." €";?></span></li>
+            <?php
+        }
+        ?>
+    </ul>
+    </div>
+
+    <div class="carte">
+    <h2> 
+        <?php $title = $bdd->query("SELECT IdCatPlat, nom FROM menucategorie WHERE IdCatPlat=6")-> fetch();
+        echo $title[1];
+        ?></h2>
+    <ul>
+        <?php 
+        $req = $bdd->query("SELECT * FROM plat WHERE IdCatePlat=6");
+        while($row = $req->fetch())
+        {
+            ?>
+            <li><?php echo $row[3]?><span><?php echo $row[1]." €";?></span></li>
+            <?php
+        }
+        ?>
+    </ul>
+    </div>
+    
+</div>
+    -->
 </body>
    
 </html>
