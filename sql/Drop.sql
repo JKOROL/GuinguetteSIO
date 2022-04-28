@@ -1,0 +1,13 @@
+DROP TABLE Consommer;
+DROP TABLE Choisir;
+DROP TABLE Reserver;
+DROP TABLE Contenir;
+DROP TABLE Composer;
+DROP TABLE Plat;
+DROP TABLE Utilisateurs;
+DROP TABLE Tables;
+DROP TABLE Animation;
+DROP TABLE Client;
+DROP TABLE Ingredient;
+DROP TABLE CategoriePlat;
+DROP TABLE Menu;
