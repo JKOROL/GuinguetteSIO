@@ -1,4 +1,20 @@
-<?php require("header.php"); ?>
+<?php 
 
-<h1>Guiguette Orléans</h1><br>
-<h2>45 Place du Martroi<br>45000 Orléans<br>02 38 63 89 56</h2>
+class ticket
+{
+    public int $idTicket;
+    public float $prix;
+    public array $PlatChoisi;
+    public $date;
+    public $heure;
+
+    public static function getPrixTT($prix)
+    {
+        
+    }
+
+}
+
+
+?>
+
