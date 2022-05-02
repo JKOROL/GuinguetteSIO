@@ -1,7 +1,7 @@
 <?php 
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=guinguette', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    include("db.php");
 }
 catch (Exception $e)
 {
@@ -21,7 +21,7 @@ catch (Exception $e)
 
 <?php
 
-$req = $bdd->query("SELECT email, password FROM utilisateurs WHERE email = $_POST["email"] AND password = $_POST["password"]");
+$req = $bdd->query("SELECT email, password FROM utilisateur WHERE email = $_POST["email"] AND password = $_POST["password"]");
 
    # $requetebdd = $bdd->prepare('INSERT INTO minichat(pseudo, message) VALUES (:pseudo, :message)'); #On prépare la table à remplir
    # $requetebdd->execute(array(   # On défini les variables qui remplissent la table

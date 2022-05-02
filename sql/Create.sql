@@ -1,24 +1,24 @@
 CREATE TABLE Menu(
-   IdMenu INT,
+   IdMenu INT AUTO_INCREMENT,
    Nom VARCHAR(50),
    Prix DECIMAL(15,2),
    PRIMARY KEY(IdMenu)
 );
 
 CREATE TABLE CategoriePlat(
-   IdCategorie INT,
+   IdCategorie INT AUTO_INCREMENT,
    Nom VARCHAR(50),
    PRIMARY KEY(IdCategorie)
 );
 
 CREATE TABLE Ingredient(
-   IdIngredient INT,
+   IdIngredient INT AUTO_INCREMENT,
    Libelle VARCHAR(50),
    PRIMARY KEY(IdIngredient)
 );
 
 CREATE TABLE Animation(
-   IdAnimation INT,
+   IdAnimation INT AUTO_INCREMENT,
    Poster VARCHAR(50),
    DateA DATE,
    Heure TIME,
@@ -27,7 +27,7 @@ CREATE TABLE Animation(
 );
 
 CREATE TABLE Tables(
-   IdTable INT,
+   IdTable INT AUTO_INCREMENT,
    IntExt BOOLEAN NOT NULL,
    NbSiege INT,
    Disponible BOOLEAN,
@@ -35,14 +35,14 @@ CREATE TABLE Tables(
 );
 
 CREATE TABLE Utilisateur(
-   idUtilisateur INT,
+   idUtilisateur INT AUTO_INCREMENT,
    Email VARCHAR(50),
    Password VARCHAR(150),
    PRIMARY KEY(idUtilisateur)
 );
 
 CREATE TABLE Plat(
-   IdPlat INT,
+   IdPlat INT AUTO_INCREMENT,
    PrixPlat DECIMAL(10,2),
    Photo VARCHAR(50),
    Libelle VARCHAR(50),
@@ -52,7 +52,7 @@ CREATE TABLE Plat(
 );
 
 CREATE TABLE Reservation(
-   IdReservation INT,
+   IdReservation INT AUTO_INCREMENT,
    Nom VARCHAR(50),
    NbClient INT,
    Telephone VARCHAR(15),

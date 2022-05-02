@@ -3,7 +3,7 @@ session_start();
 
  try
  {
-     $bdd = new PDO('mysql:host=localhost;dbname=guinguette', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+     include("db.php");
  }
  catch (Exception $e)
  {
@@ -75,7 +75,7 @@ session_start();
         $email = $_POST['email'];
         $password = $_POST['password'];
     }
-    $req = $bdd->prepare('SELECT idUtilisateur, email, password FROM utilisateurs WHERE email = :email');
+    $req = $bdd->prepare('SELECT idUtilisateur, email, password FROM utilisateur WHERE email = :email');
     if (isset($_POST['email']))
     {
         $req->execute(array(
@@ -100,6 +100,7 @@ session_start();
             $_SESSION['idUtilisateur'] = $resultat['idUtilisateur'];
             echo 'Connexion réussie, prends donc place..'.
                 '<a href="index.php"> index </a>';
+                header("Refresh: 2; URL=index.php");
         }
 
         elseif (isset($_POST['Pwd']))
