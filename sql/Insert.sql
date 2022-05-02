@@ -110,3 +110,46 @@ insert into Reserver (IdReservation, IdTable) values (19, 19);
 insert into Reserver (IdReservation, IdTable) values (18, 20);
 insert into Reserver (IdReservation, IdTable) values (18, 2);
 insert into Reserver (IdReservation, IdTable) values (6, 8);
+--
+INSERT INTO ingredient (`IdIngredient`, `Libelle`) VALUES
+(17, 'Saumon'),
+(18, 'Poisson'),
+(19, 'Jambon cru'),
+(20, 'Rillettes'),
+(21, 'Saucisson'),
+(22, 'Pâté en croûte'),
+(23, 'Boudin noir'),
+(24, 'Tartare de saumon'),
+(25, 'Terrine de saumon'),
+(26, 'Rillettes de sardines'),
+(27, 'Gravelax de saumon'),
+(28, 'Fromage'),
+(29, 'Frites'),
+(30, 'Saucisse');
+--
+INSERT INTO plat (`IdPlat`, `PrixPlat`, `Photo`, `Libelle`) VALUES
+(2, 7, 'x', 'Terrine de saumon'),
+(3, 7, 'x', 'Assiette de friture de poissons'),
+(4, 11, 'x', 'Ardoise de charcuterie'),
+(5, 11, 'x', 'Ardoise de la mer'),
+(6, 14.5, 'x', 'Ardoise mixte "Charcuterie/Fromage"'),
+(7, 5, 'x', 'Assiette de frites'),
+(8, 15, 'x', 'Tartare de Boeuf');
+--
+INSERT INTO composer (`IdIngredient`, `IdPlat`) VALUES
+(17, 2),
+(18, 3),
+(19, 4),
+(20, 4),
+(21, 4),
+(22, 4),
+(23, 4),
+(24, 5),
+(25, 5),
+(26, 5),
+(27, 5),
+(28, 6),
+(29, 7),
+(30, 8),
+(29, 8),
+(26, 8);
