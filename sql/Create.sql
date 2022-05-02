@@ -28,16 +28,16 @@ CREATE TABLE Animation(
 
 CREATE TABLE Tables(
    IdTable INT,
-   IntExt LOGICAL NOT NULL,
+   IntExt BOOLEAN NOT NULL,
    NbSiege INT,
-   Disponible LOGICAL,
+   Disponible BOOLEAN,
    PRIMARY KEY(IdTable)
 );
 
 CREATE TABLE Utilisateur(
    idUtilisateur INT,
    Email VARCHAR(50),
-   Password VARCHAR(50),
+   Password VARCHAR(150),
    PRIMARY KEY(idUtilisateur)
 );
 

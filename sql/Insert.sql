@@ -127,14 +127,14 @@ INSERT INTO ingredient (`IdIngredient`, `Libelle`) VALUES
 (29, 'Frites'),
 (30, 'Saucisse');
 --
-INSERT INTO plat (`IdPlat`, `PrixPlat`, `Photo`, `Libelle`) VALUES
-(2, 7, 'x', 'Terrine de saumon'),
-(3, 7, 'x', 'Assiette de friture de poissons'),
-(4, 11, 'x', 'Ardoise de charcuterie'),
-(5, 11, 'x', 'Ardoise de la mer'),
-(6, 14.5, 'x', 'Ardoise mixte "Charcuterie/Fromage"'),
-(7, 5, 'x', 'Assiette de frites'),
-(8, 15, 'x', 'Tartare de Boeuf');
+INSERT INTO plat (`IdPlat`, `PrixPlat`, `Photo`, `Libelle`,IdCategorie) VALUES
+(2, 7, 'x', 'Terrine de saumon',0),
+(3, 7, 'x', 'Assiette de friture de poissons',0),
+(4, 11, 'x', 'Ardoise de charcuterie',0),
+(5, 11, 'x', 'Ardoise de la mer',0),
+(6, 14.5, 'x', 'Ardoise mixte "Charcuterie/Fromage"',0),
+(7, 5, 'x', 'Assiette de frites',0),
+(8, 15, 'x', 'Tartare de Boeuf',0);
 --
 INSERT INTO composer (`IdIngredient`, `IdPlat`) VALUES
 (17, 2),
