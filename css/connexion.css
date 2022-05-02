@@ -1,0 +1,111 @@
+
+body{
+    margin : 0;
+    font-family: "Nunito Sans", sans-serif;
+   overflow : hidden;
+   
+}
+form {
+        position: relative;
+        top: 150px;
+        display: flex;
+        justify-content: center;
+}
+footer{
+    background: #ffffe0;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:50px;
+    
+}
+.background {
+ position : fixed;
+}
+.home-logo {
+  margin-top: -50px;
+  max-width: 300px !important;
+  height: 100px;
+  margin-left: 30px;
+}
+
+.footer_text_left {
+    float : left;
+    padding-top : 0.9%;
+    padding-left : 10px;
+}
+.footer_text_right {
+    float : right;
+    padding-right : 10px;
+}
+
+.formulaire{
+    border: thick double #5E3080;;
+    background-color :  #ffffe0;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;  
+}
+.list-nav-bar{
+    display: flex;
+    list-style:none;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    background-color: #ffffe0;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+    position: relative;
+
+}
+
+.list-nav-bar li a {
+    color: #5E3080;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.list-nav-bar li a:hover {
+    color: #5E3080;
+}
+.list-nav-bar li{
+    text-decoration: none;
+}
+
+.btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    display: inline-block;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    line-height: 3rem;
+    padding: 0 2rem;
+    margin: 0 0.2rem 1rem 0;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #c5c5c5;
+    border: 0.2rem solid #c5c5c5;
+}
+
+.text_center{
+    text-align: center;
+    
+}
+.se_connecter{
+
+    color :white;
+    position: relative;
+    top: 145px;
+    text-align: center;
+}
+
+
+
