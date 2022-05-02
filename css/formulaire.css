@@ -120,3 +120,6 @@ body{
 label{
     color: white;
 }
+.input-number{
+    width: 80px;
+}
