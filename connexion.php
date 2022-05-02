@@ -3,7 +3,8 @@ session_start();
 
  try
  {
-     $bdd = new PDO('mysql:host=localhost;dbname=guinguette', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+     include("db.php");
+     include("header.php");
  }
  catch (Exception $e)
  {
@@ -21,7 +22,7 @@ session_start();
 </head>
 
     <body>
-    <img class ="background" src ="images/hero-bg.jpg">
+  
 
     <nav class="nav-bar">
         <div class="div-nav-bar">
@@ -41,7 +42,7 @@ session_start();
     </div>     
        
     <div class="se_connecter"> Se connecter </div>
-        <form method="post" action="se_connecter.php">
+        <form method="post" action="connexion.php">
             <div class="formulaire">
                 <p> <label for="email">Adresse mail <input type="email" name="email" id="email" placeholder="guigui@hotmail.fr"/></label> </p>
                 <p> <label for="mdp">Mot de passe <input type="password" name="password" id="password" placeholder="*********"/></label> </p>   
@@ -99,8 +100,8 @@ session_start();
         if (isset ($isPasswordCorrect) AND ($isPasswordCorrect))
         {
             $_SESSION['idUtilisateur'] = $resultat['idUtilisateur'];
-            echo 'Connexion réussie, prends donc place..'.
-                '<a href="index.php"> index </a>';
+            echo 'Connexion réussie, prends donc place..';
+            header("index.php");
         }
 
         elseif (isset($_POST['Pwd']))
