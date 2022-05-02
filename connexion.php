@@ -57,6 +57,7 @@ session_start();
                 </div>  
             </div>
         </form>
+
 </body>
 
 <footer>
@@ -75,7 +76,7 @@ session_start();
         $email = $_POST['email'];
         $password = $_POST['password'];
     }
-    $req = $bdd->prepare('SELECT idUtilisateur, email, password FROM utilisateurs WHERE email = :email');
+    $req = $bdd->prepare('SELECT idUtilisateur, email, password FROM utilisateur WHERE email = :email');
     if (isset($_POST['email']))
     {
         $req->execute(array(

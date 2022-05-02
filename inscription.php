@@ -60,7 +60,7 @@ if (isset($_POST['password']) AND isset($_POST['passwordVerif']))
 if ((isset($Email)))
     {
         // Vérif si pseudo libre. 
-        $reponse = $bdd->query('SELECT email FROM utilisateurs WHERE email="'.$Email.'"');
+        $reponse = $bdd->query('SELECT email FROM utilisateur WHERE email="'.$Email.'"');
 
         if ($donnees =$reponse ->fetch())
         {
@@ -75,7 +75,7 @@ if ((isset($Email)))
         // On hache
         $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
         // On insère
-        $requete = $bdd->prepare("INSERT INTO utilisateurs(email, password) VALUES ( ?, ?)");
+        $requete = $bdd->prepare("INSERT INTO utilisateur(email, password) VALUES ( ?, ?)");
         $requete->execute(array($Email, $pass_hache ));
         echo "Utilisateur crée... Redirection...";
         header("Refresh: 2; URL=se_connecter.php"); 
