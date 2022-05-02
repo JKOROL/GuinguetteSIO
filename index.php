@@ -23,7 +23,7 @@
                 <img class="home-logo" src="images/logo.png" alt="Homepage">
             </a>
             <div class="login">
-                <a href="connexion.php">
+                <a href="se_connecter.php">
                     Se connecter
                 </a>
             </div>
