@@ -22,6 +22,21 @@
             <a href="index.php">
                 <img class="home-logo" src="images/logo.png" alt="Homepage">
             </a>
+            <div id="content">
+                <!-- tester si l'utilisateur est connecté -->
+                <?php
+                /*
+                    session_start();
+                    if($_SESSION['username'] !== ""){
+                        $user = $_SESSION['username'];
+                        // afficher un message
+                        echo "Bonjour $user, vous êtes connecté";
+                    }
+                    */
+                ?>
+            </div>
+
+            <!-- si l'user est connecté, afficher la déconnexion  -->
             <div class="login">
                 <a href="connexion.php">
                     Se connecter

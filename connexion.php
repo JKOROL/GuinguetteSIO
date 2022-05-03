@@ -4,7 +4,7 @@ session_start();
  try
  {
      include("db.php");
-     include("header.php");
+     require_once("header_connexion.php");
  }
  catch (Exception $e)
  {
@@ -12,7 +12,7 @@ session_start();
  }
 ?>  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" class="background_connexion">
 <head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,44 +22,31 @@ session_start();
 </head>
 
     <body>
-  
-
-    <nav class="nav-bar">
-        <div class="div-nav-bar">
-        <ul class="list-nav-bar">
-            <li><a  href="index.php" title="home">Accueil</a></li>
-            <li><a  href="animation.php" title="animation">Animation</a></li>
-            <li><a  href="carte.php" title="menu">Menu</a></li>
-            <li><a  href="#works" title="partenaire">Partenaire</a></li>
-            <li><a  href="#contact" title="contact">Contact</a></li>
-        </ul>
+        <a href="index.php">
+            <img class="home-logo" src="images/logo.png" alt="Homepage">
+        </a>
+        <div class="se_connecter"> Connectez-vous afin de profiter de nos services </div>
+        <div class="formulaire">
+            <!-- zone de connexion -->
+            <form method="post" action="connexion.php">
+                <label>Adresse email* :</label>
+                <input type="text" placeholder="Saisir l'adresse email" name="email" required>
+                <label>Mot de passe* :</label>
+                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+                <input type="submit" id='submit' value='Envoyer'></input> 
+                <a href="formulaire_mdp.php" style="text-decoration : none;color:  black;"> Mot de passe oublié ? </a> </br></br>
+                <a href="inscription.php" style="text-decoration : none;color:  black;"> Pour s'inscrire c'est ici ! </a>
+                <?php
+                if(isset($_GET['erreur'])){
+                    $err = $_GET['erreur'];
+                    if($err==1 || $err==2)
+                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                }
+                ?>
+            </form>
+                
         </div>
-    </nav>
-    <div class="">
-            <a href="index.php">
-                <img class="home-logo" src="images/logo.png" alt="Homepage">
-            </a>
-    </div>     
-       
-    <div class="se_connecter"> Se connecter </div>
-        <form method="post" action="connexion.php">
-            <div class="formulaire">
-                <p> <label for="email">Adresse mail <input type="email" name="email" id="email" placeholder="guigui@hotmail.fr"/></label> </p>
-                <p> <label for="mdp">Mot de passe <input type="password" name="password" id="password" placeholder="*********"/></label> </p>   
-                <p> <label for="resteco">Se souvenir de moi ? </label><input type="checkbox" name="resteco" id="resteco" /> </p>
-                <div class="text_center"> 
-                    <div class="submit">
-                        <p><input type="submit" value="Se connecter" /></p>
-                    </div> 
-                </div>   
-                    <p><a href="formulaire_mdp.php" style="text-decoration : none;color:  black;"> Mot de passe oublié ? </a></p>
-                    
-                    <p><a href="inscription.php" style="text-decoration : none;color:  black;"> Pour s'inscrire c'est ici ! </a></p>   
-                </div>  
-            </div>
-        </form>
-
-</body>
+    </body>
 
 <footer>
     <div class="footer_text_left"> 
@@ -101,7 +88,7 @@ session_start();
         {
             $_SESSION['idUtilisateur'] = $resultat['idUtilisateur'];
             echo 'Connexion réussie, prends donc place..';
-            header("index.php");
+            header("Refresh: 2; URL=index.php");
         }
 
         elseif (isset($_POST['Pwd']))

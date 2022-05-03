@@ -1,11 +1,12 @@
-
 body{
     margin : 0;
     font-family: "Nunito Sans", sans-serif;
    overflow : hidden;
-   
 }
-.background {
+.formulaire a:hover{
+    background-color: gold;
+}
+.background_connexion {
     background: url("../images/hero-bg.jpg") no-repeat center center fixed; 
     background-color: #373F51;;
     -webkit-background-size: cover;
@@ -21,51 +22,89 @@ body{
 }
 
 .formulaire{
-    border: thick double #5E3080;;
-    background-color :  #ffffe0;
-    width: 400px;
-    text-align: center;
-    border-radius: 10px;  
+    width:400px;
+    margin:0 auto;
+    margin-top:3%;
+    background-color :  #373F51;
+    border-radius: 1%;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.list-nav-bar{
-    display: flex;
-    list-style:none;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
-    background-color: #ffffe0;
+/* Bordered form */
+.formulaire form {
+    width:100%;
+    padding: 30px;
+    border: 2px solid #f1f1f1;
+    border-radius: 1%;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Full-width inputs */
+.formulaire input[type=text], .formulaire input[type=password] {
     width: 100%;
-    padding-left: 0;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.formulaire a{
+    font-size: 14Px;
+}
+/* Set a style for all buttons */
+.formulaire input[type=submit] {
+    background-color: #373F51;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.formulaire input[type=submit]:hover {
+    background-color: white;
+    color: #373F51;
+    border: 1px solid #373F51;
+}
+.se_connecter{
+    padding-left: 36%;
+    padding-right: 33%;
+    color :white;
+    padding-top: 5%;
+    font-size: 24px;
+    word-wrap: break-word;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.backoffice nav{
+    background-color: black;
+}
+.backoffice a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+.backoffice a:hover{
+    text-decoration: underline;
+}
+.backoffice li
+{
+    list-style: none;
+}
+.ul-backoffice{
+    display: flex;
+    justify-content: space-evenly;
     margin-top: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-   
-    position: relative;
-
-}
-
-.list-nav-bar li a {
-    color: #5E3080;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-.list-nav-bar li a:hover {
-    color: #5E3080;
-}
-.list-nav-bar li{
-    text-decoration: none;
-}
-form {
-        position: absolute;
-        top: 150px;
-        display: flex;
-        justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 footer{
-    background: #ffffe0;
-    position:absolute;
+    background: black;
+    position: absolute;
     bottom:0;
     width:100%;
     height:50px;
+    color: white;
 }
 .footer_text_left {
     float : left;
@@ -77,18 +116,16 @@ footer{
     padding-right : 10px;
 }
 
+.inscription_entete{
 
-
-.text_center{
-    text-align: center;
-    
-}
-.se_connecter{
-
+    padding-left: 48%;
+    padding-right: 45%;
     color :white;
-    top: 145px;
-    text-align: center;
+    padding-top: 5%;
+    font-size: 32px;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
+#rep_secrete{
+    display: none;
+}
