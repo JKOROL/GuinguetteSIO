@@ -59,3 +59,13 @@ function suppTable()
         selectPrecedent=document.getElementById("IdTable"+i).disabled=false;
     }
 }
+
+let back_office = document.getElementById("back_office");
+let back_office_ul = document.getElementById("back_office_ul");
+back_office.addEventListener("click", () => {
+    if(getComputedStyle(back_office_ul).display != "none"){
+      back_office_ul.style.display = "none";
+    } else {
+      back_office_ul.style.display = "block";
+    }
+  })

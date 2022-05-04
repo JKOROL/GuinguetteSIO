@@ -4,7 +4,10 @@ session_start();
 try
 {
     include("db.php");
+<<<<<<< HEAD
     require_once("header_connexion.php");
+=======
+>>>>>>> origin/main
 }
 catch (Exception $e)
 {
@@ -58,6 +61,7 @@ catch (Exception $e)
 if (isset($_POST['Email']))
 {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    echo preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['Email']);
     if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['Email']))
     {
         $Email = htmlspecialchars($_POST['Email']);
@@ -86,16 +90,21 @@ if (isset($_POST["rep_question"])){
 }
 if ((isset($Email)))
     {
+<<<<<<< HEAD
         // Vérif si email libre. 
+=======
+        // Vérif si pseudo libre. 
+>>>>>>> origin/main
         $reponse = $bdd->query('SELECT email FROM utilisateur WHERE email="'.$Email.'"');
 
-        if ($donnees =$reponse ->fetch())
+        if (!$reponse)
         {
             ?>
                <p style="color:#FF0000";> Adresse e-mail déjà utilisé, veuillez recommencer </p> 
             <?php
             exit;   
         }
+<<<<<<< HEAD
         // On crée l'user
         if (isset($Email) AND (isset($password)) AND (isset($repQuestion)))
         {
@@ -110,6 +119,18 @@ if ((isset($Email)))
         else {
             echo "Erreur lors de la création, veuillez recommencer";
         }
+=======
+    // On crée l'user
+    else
+    {
+        // On hache
+        $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        // On insère
+        $requete = $bdd->prepare("INSERT INTO utilisateur(email, password) VALUES ( ?, ?)");
+        $requete->execute(array($Email, $pass_hache ));
+        echo "Utilisateur crée... Redirection...";
+        header("Refresh: 2; URL=se_connecter.php"); 
+>>>>>>> origin/main
     }
 ?>
 <footer>

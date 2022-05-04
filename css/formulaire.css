@@ -1,12 +1,15 @@
 
+
 .formulaire{
-    border: 1px solid #111;
-    padding: 20px 20px;
+    border: 5px solid #B07E4A;
+    background-color: black;
+    padding: 15px 15px;
     width: 500px;
     height: auto;
     position: relative;
     left: 35%;
-    top: 200px;
+    top: 5px;
+    font-weight: bold;
 }
 
 .formulaire form{
@@ -14,3 +17,106 @@
     justify-content: center;
 }
 
+.formulaire select{
+    border-color:#B07E4A;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.formulaire h2{
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.link-logo{
+    position: relative;
+    top: 5px;
+    left: 45%;
+}
+
+.input-admin{
+    border-color: #B07E4A;
+    margin-right: 10px;
+}
+
+.form-button{
+    width: 150px;
+    margin-top: 10px;
+    background-color: #B07E4A;
+    color: wheat;
+    position: relative;
+    left: 33%;
+}
+
+.form-button:hover{
+    color: white;
+}
+.plus-moin input{
+    position: relative;
+    left: 40%;
+    margin-left: 10px;
+}
+
+.flex-form{
+    display: flex;
+}
+
+.hide{
+    display: none;
+    position: relative;
+    z-index: 999;
+    list-style: none;
+    background-color: mistyrose;
+    width: 200px;
+    margin:0;
+}
+
+.hide a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.hide a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.backoffice nav{
+    background-color: black;
+}
+
+.backoffice a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.backoffice a:hover{
+    text-decoration: underline;
+}
+
+.backoffice li
+{
+    list-style: none;
+}
+
+.ul-backoffice{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+body{
+    margin: 0;
+    background-color: #5E3080;
+}
+
+label{
+    color: white;
+}

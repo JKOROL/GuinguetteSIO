@@ -56,7 +56,7 @@
                 <ul class="header-nav__list">
                     <li><a class="smoothscroll"  href="index.php" title="home">Accueil</a></li>
                     <li><a class="smoothscroll"  href="animation.php" title="animation">Animation</a></li>
-                    <li><a class="smoothscroll"  href="menu.php" title="menu">Menu</a></li>
+                    <li><a class="smoothscroll"  href="carte.php" title="menu">Menu</a></li>
                     <li><a class="smoothscroll"  href="#works" title="partenaire">Partenaire</a></li>
                     <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
                 </ul>
@@ -156,8 +156,8 @@
                 <div class="col-4">
                     <div class="col-block item-process" data-aos="fade-up">
                         <div class="item-process__text">
-                            <a href="Menu.html" class="LienImageAbout"><img class="Logo" src="images/Menu.png" alt="Logo Menu"></a>
-                            <p class="LienAbout"><a href="Menu.html" class="LienAbout Lien">Menu</a></p>
+                            <a href="carte.php" class="LienImageAbout"><img class="Logo" src="images/Menu.png" alt="Logo Menu"></a>
+                            <p class="LienAbout"><a href="carte.php" class="LienAbout Lien">Menu</a></p>
                         </div>
                     </div>
                 </div>

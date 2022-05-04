@@ -1,5 +1,5 @@
 <?php 
-$bdd = new PDO('mysql:host=localhost;dbname=guinguette;charset=utf8','root','');
+$bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','root','');
 if(isset($_POST["button"]))
 {
     if(isset($_POST))
