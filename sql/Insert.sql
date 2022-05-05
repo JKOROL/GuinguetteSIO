@@ -155,8 +155,8 @@ INSERT INTO composer (`IdIngredient`, `IdPlat`) VALUES
 (26, 8);
 -- INSERT QUESTIONS
 INSERT INTO `questions_secretes` (`idQuestion`, `libQuestion`) VALUES 
-(NULL, 'Quel était le métier de votre grand-père ?'),
-(NULL, 'Quel était le nom de votre premier animal de compagnie ?'),
-(NULL, 'Qui était votre artiste musical préféré étant enfant ?'),
-(NULL, 'Quel est votre jeu préféré ?'),
-(NULL, 'Quel est votre surnom donné par votre famille ?');
+(NULL, 'Quel est le nom et prénom de votre premier amour ?'), 
+(NULL, 'Quel est le nom de famille de votre professeur d’enfance préféré ?'), 
+(NULL, 'Quel est le prénom de votre arrière-grand-mère maternelle ?'), 
+(NULL, 'Dans quelle ville se sont rencontrés vos parents ?'), 
+(NULL, 'Qu’est-ce vous vouliez devenir plus grand, lorsque vous étiez enfant ?');
