@@ -94,6 +94,10 @@
                     près d'Orleans en Loiret (45)
                 </h3>
 
+                <div class="reservation">
+                    <button><a href="reservation.php"></a>RÉSERVATION</button>
+                </div>
+            
             </div> <!-- end home-content__main -->
 
             <div class="home-content__scroll">
@@ -121,6 +125,8 @@
                 <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
             </li>
         </ul> <!-- end home-social -->
+
+
 
     </section> <!-- end s-home -->
 

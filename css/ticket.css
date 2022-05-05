@@ -1,0 +1,18 @@
+.ticket
+{
+    border: 1px solid;
+    width: 32%;
+    display: block;
+    text-align: center;
+}
+
+.after
+{
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: black;
+    width: 90%;
+    position: relative;
+    left: 4%;
+}

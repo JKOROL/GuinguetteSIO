@@ -147,4 +147,5 @@
 }
 .reservation button{
     border-radius: 20px;
+    z-index: 9999;
 }
