@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 session_start();
+header('Content-type: text/html; charset=UTF-8');
 try
 {
     include("db.php");
@@ -12,10 +13,10 @@ catch (Exception $e)
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" class="background_connexion">
+<!-- class="background_connexion"> -->
+<html lang="en" class="background_connexion">  
 <head> 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/connexion.css">
     <title>Inscription</title>
@@ -36,83 +37,24 @@ catch (Exception $e)
                 $listQst = $stmt->fetchAll(PDO::FETCH_ASSOC);         
             ?>
             <div class= "">
-                <label>Merci de choisir une question secrète* : <select id="qst_secrete"><option value=""> Questions </option>
+                <label>Merci de choisir une question secrète* : </label><select name="qst_secrete" id="qst_secrete"><option value=""> Questions </option>
                 <?php 
                     foreach($listQst as $curQst){
                         echo "<option value='".($curQst["idQuestion"])."'";
                         echo ">".$curQst["libQuestion"]."</option>";
                     }
                 ?>
-                </select></label>   
-                <div id="rep_secrete">
-                    <label>Réponse à la question* :</label>
-                    <input type="text" name ="rep_question"></input>
-                </div>
-                <input type="submit"></input>   
-                <a href="connexion.php" style="color: black;"> Se connecter </a>
-            </div>  
+                </select>   
+                <span class="focus"></span>
+            </div> 
+            <div id="rep_secrete">
+                <label>Réponse à la question* :</label>
+                <input type="text" name ="rep_question"></input>
+            </div>
+            <input type="submit"></input>   
+            <a href="connexion.php" style="color: black;"> Se connecter </a>
         </form>
     </div>
-<?php 
-// Début
-if (isset($_POST['Email']))
-{
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    echo preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['Email']);
-    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['Email']))
-    {
-        $Email = htmlspecialchars($_POST['Email']);
-    }
-    else
-    {
-        echo 'L\'adresse mail ' . $_POST['Email'] . ' n\'est pas valide, recommencez !';
-        exit;
-    }
-}    
-// Vérif mdp correspondent.
-if (isset($_POST['password']) AND isset($_POST['passwordVerif']))
-{
-    if (($_POST['password']) != ($_POST['passwordVerif'])) 
-    {
-        echo 'Les mots de passe ne correspondent pas, veuillez recommencer.';
-        exit;
-    }
-} 
-if (isset($_POST["rep_question"])){
-    $repQuestion = htmlspecialchars($_POST["rep_question"]);
-    if (empty($repQuestion)){
-        echo "La réponse à la question ne doit pas recevoir de caractère spécial.";
-        exit;
-    }
-}
-if ((isset($Email)))
-    {
-        // Vérif si pseudo libre. 
-        $reponse = $bdd->query('SELECT email FROM utilisateur WHERE email="'.$Email.'"');
-
-        if (!$reponse)
-        {
-            ?>
-               <p style="color:#FF0000";> Adresse e-mail déjà utilisé, veuillez recommencer </p> 
-            <?php
-            exit;   
-        }
-        // On crée l'user
-        if (isset($Email) AND (isset($password)) AND (isset($repQuestion)))
-        {
-            // On hache
-            $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            // On insère
-            $requete = $bdd->prepare("INSERT INTO utilisateur(email, password, repQuestion, questionSec) VALUES ( ?, ?, ?, ?)");
-            $requete->execute(array($Email, $pass_hache, $repQuestion, $idQuestion));
-            echo "Utilisateur crée... Redirection...";
-            header("Refresh: 2; URL=connexion.php"); 
-        }
-        else {
-            echo "Erreur lors de la création, veuillez recommencer";
-        }
-    }
-?>
 <footer>
     <div class="footer_text_left"> 
         Sibel - Jovick - Baptiste - Jonathan  - Adam - William </p>
@@ -121,6 +63,76 @@ if ((isset($Email)))
         <p> Une production SLAM  2021 - 2022 
     </div>
 </footer>
+<?php 
+try {
+        // Début
+    if (isset($_POST['Email']))
+    {
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+      //  echo preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['Email']);
+        if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['Email']))
+        {
+            $Email = htmlspecialchars($_POST['Email']);
+        }
+        else
+        {
+            echo '<div class="text_error">Erreur : </br>L\'adresse mail '.$_POST['Email'].' n\'est pas valide, recommencez !</div>';
+            exit;
+        }
+    }   
+    if (isset($_POST['qst_secrete']) AND ($_POST['qst_secrete'] != 0)){
+        $idQuestion = $_POST['qst_secrete'];
+    } 
+    // Vérif mdp correspondent.
+    if (isset($_POST['password']) AND isset($_POST['passwordVerif']))
+    {
+        if (($_POST['password']) != ($_POST['passwordVerif'])) 
+        {
+            echo "<div class='text_error'>Erreur : </br> Les mots de passe ne correspondent pas, veuillez recommencer.</div>";
+            exit;
+        }
+    } 
+    if (isset($_POST["rep_question"])){
+        $repQuestion = htmlspecialchars($_POST["rep_question"]);
+        if (empty($repQuestion)){
+            echo "<div class='text_error'>Erreur : </br> Merci de répondre à la question secrète.</div>";
+            exit;
+        }
+    }
+        if((isset($Email))){
+            // Vérif si pseudo libre. 
+            $sql = ('SELECT Email FROM utilisateur WHERE Email="'.$Email.'"');
+            $stmt = $bdd->query($sql);
+            $reponse = $stmt->fetch(PDO::FETCH_ASSOC);    
+            if ($reponse)
+            {
+                echo "<div class='text_error'>Erreur : </br> Adresse e-mail déjà utilisée   , veuillez recommencer.</div>";
+                exit;
+            }
+            // On crée l'user
+            if (isset($Email) AND (isset($password)) AND (isset($repQuestion)) AND isset($idQuestion))
+            {
+                // On hache
+                $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                // On insère
+                $requete = $bdd->prepare("INSERT INTO utilisateur(email, password, repQuestion, questionSec) VALUES ( ?, ?, ?, ?)");
+                $requete->execute(array($Email, $pass_hache, $repQuestion, $idQuestion));
+                echo "<div class='text_reussi'>Utilisateur crée... Redirection...</div>";
+                header("Refresh: 2; URL=connexion.php"); 
+            }
+        else{
+            echo "<div class='text_error'> Erreur lors de la création, veuillez recommencer </div>";
+            exit;
+        }
+    }
+}
+
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+?>
+
 <script>
 let qst_secrete = document.getElementById("qst_secrete");
 let rep_secrete = document.getElementById("rep_secrete");

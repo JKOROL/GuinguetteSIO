@@ -29,7 +29,7 @@ session_start();
         <div class="formulaire">
             <!-- zone de connexion -->
             <form method="post" action="connexion.php">
-                <label>Adresse email* :</label>
+                <label>Adresse e-mail* :</label>
                 <input type="text" placeholder="Saisir l'adresse email" name="email" required>
                 <label>Mot de passe* :</label>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
@@ -40,7 +40,7 @@ session_start();
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
                     if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                        echo "<div class='text_erreur'>Utilisateur ou mot de passe incorrect</div>";
                 }
                 ?>
             </form>
@@ -68,8 +68,7 @@ session_start();
     if (isset($_POST['email']))
     {
         $req->execute(array(
-        'email' => $email));
-        echo $email;
+        'email' => $email));;
     }
     $resultat = $req->fetch();
 
@@ -80,20 +79,20 @@ session_start();
     }
     if (isset($resultat) AND (!$resultat) AND (isset($_POST['password'])))
     {
-        echo '<div class="text_center"> Mauvais identifiant ou mot de passe ! (error 1)</div>';
+        echo '<div class="text_error"> Mauvais identifiant ou mot de passe !</div>';
     } 
     else
     {
         if (isset ($isPasswordCorrect) AND ($isPasswordCorrect))
         {
             $_SESSION['idUtilisateur'] = $resultat['idUtilisateur'];
-            echo 'Connexion réussie, prends donc place..';
+            echo '<div class="text_reussi">Connexion réussie, prends donc place..</div>';
             header("Refresh: 2; URL=index.php");
         }
 
-        elseif (isset($_POST['Pwd']))
+        if (isset($_POST['password']) AND (!$isPasswordCorrect))
         {
-            echo 'Mauvais identifiant ou mot de passe ! (error 2)';
+            echo '<div class="text_error"> Mauvais identifiant ou mot de passe !</div>';
             exit;
         }
     }
