@@ -1,0 +1,44 @@
+/** Insertion de plat dans la table de plat et ajout de catégorie dans categorieplat**/
+
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,8,"","Assiette de friture de poissons",1);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,11.50,"","Ardoise de charcuterie",1);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,8,"","Ardoise de la mer",1);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,8,"","Ardoise mixte « Charcuterie/Fromage",1);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,8,"","Assiette de frites",1);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,15,"","Salade périgourdine",2);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,13,"","Salade César",2);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,14,"","Poke Bowl",2);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,13,"","Salade italienne",2);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,14,"","Salade de soleil (Salade végétarienne)",2);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,17,"","Pavé de saumon",3);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,17,"","Gambas",3);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,17,"","Filet de dorade royale",3);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,14,"","Andouillette au Vouvray",4);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,14,"","Araignée de porc aux herbes de Provence",4);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,13,"","Jambon à la plancha",4);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,18,"","Effeuillé de boeuf 200g env.",4);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,22,"","Brochette de boeuf 400g env.",4);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,19,"","Souris d’agneau au thym",4);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,24,"","Entrecôte 350 g env.",4);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,14,"","Fish & Chips au Cabillaud",5);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,14,"","Beignets de calamars à la Romaine",5);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,14,"","DUO Beignets de calamars / Friture de poissons",5);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6,"","Tarte du moment",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6,"","Nougat glacé, avec coulis de fruits rouges",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,5,"","Mystère",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,5.50,"","Citron givré",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6,"","Demi-noix de coco givrée",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6,"","Ananas givré",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,5,"","Mystère",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6,"","Cheese Cake aux fruits rouges",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6,"","Tiramisu au café",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6.50,"","Baba au rhum",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,6.50,"","Moelleux au coeur coulant chocolat",6);
+INSERT INTO `plat`(`IdPlat`, `PrixPlat`, `Photo`, `Libelle`, `IdCategorie`) VALUES (NULL,7.50,"","Café gourmand",6);
+
+INSERT INTO `categorieplat`(`IdCategorie`, `Nom`) VALUES (NULL, "POUR COMMENCER");
+INSERT INTO `categorieplat`(`IdCategorie`, `Nom`) VALUES (NULL, "GRANDES SALADES");
+INSERT INTO `categorieplat`(`IdCategorie`, `Nom`) VALUES (NULL, "POISSONS À LA PLANCHA");
+INSERT INTO `categorieplat`(`IdCategorie`, `Nom`) VALUES (NULL, "VIANDES");
+INSERT INTO `categorieplat`(`IdCategorie`, `Nom`) VALUES (NULL, "POISSONS FRITS");
+INSERT INTO `categorieplat`(`IdCategorie`, `Nom`) VALUES (NULL, "DESSERTS");

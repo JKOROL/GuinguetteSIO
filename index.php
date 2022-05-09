@@ -1,4 +1,7 @@
-<?php require_once('header.php'); ?>
+<?php 
+require_once('header.php'); 
+session_start();
+?>
 
 
 <body id="top">
@@ -22,11 +25,27 @@
             <a href="index.php">
                 <img class="home-logo" src="images/logo.png" alt="Homepage">
             </a>
-            <div class="login">
-                <a href="se_connecter.php">
-                    Se connecter
-                </a>
-            </div>
+                <!-- tester si l'utilisateur est connecté -->
+                <?php
+                echo '<div class="login">';
+                    if(isset($_SESSION['idUtilisateur']) AND ($_SESSION['idUtilisateur'] != 0)){
+                        $user = $_SESSION['idUtilisateur'];
+                        
+                        echo '<a href="deconnexion.php">
+                        Se déconnecter
+                        </a>';
+                    }
+                    else {
+                        echo '<a href="connexion.php">
+                        Se connecter
+                    </a>';
+                    }
+                echo "</div>";
+                ?>
+
+            <!-- si l'user est connecté, afficher la déconnexion  -->
+        
+            
     
         </div> <!-- end header-logo -->
 
@@ -94,6 +113,10 @@
                     près d'Orleans en Loiret (45)
                 </h3>
 
+                <div class="reservation">
+                   <a href="reservationC.php"> <button>RÉSERVATION</button></a>
+                </div>
+            
             </div> <!-- end home-content__main -->
 
             <div class="home-content__scroll">
@@ -121,6 +144,8 @@
                 <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
             </li>
         </ul> <!-- end home-social -->
+
+
 
     </section> <!-- end s-home -->
 

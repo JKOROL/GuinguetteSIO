@@ -147,7 +147,5 @@
 }
 .reservation button{
     border-radius: 20px;
-}
-#NbClient{
-
+    z-index: 9999;
 }
