@@ -16,3 +16,8 @@
     position: relative;
     left: 4%;
 }
+
+.date{
+    display: flex;
+    justify-content: space-around;
+}

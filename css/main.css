@@ -2063,7 +2063,7 @@ body.menu-is-open {
   display: table;
 }
 
-.s-home::before {
+/*.s-home::before {
   display: block;
   content: "";
   position: absolute;
@@ -2074,7 +2074,7 @@ body.menu-is-open {
   background-color: #111111;
   opacity: .7;
   z-index: 2;
-}
+}*/
 
 .s-home::after {
   display: block;

@@ -95,7 +95,7 @@
                 </h3>
 
                 <div class="reservation">
-                    <button><a href="reservation.php"></a>RÉSERVATION</button>
+                   <a href="reservationC.php"> <button>RÉSERVATION</button></a>
                 </div>
             
             </div> <!-- end home-content__main -->
