@@ -91,7 +91,7 @@ CREATE TABLE Reserver(
 CREATE TABLE Choisir(
    IdMenu INT,
    IdReservation INT,
-   PRIMARY KEY(IdMenu, IdReservation),
+   Quantite INT,
    FOREIGN KEY(IdMenu) REFERENCES Menu(IdMenu),
    FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation)
 );
@@ -99,7 +99,7 @@ CREATE TABLE Choisir(
 CREATE TABLE Consommer(
    IdPlat INT,
    IdReservation INT,
-   PRIMARY KEY(IdPlat, IdReservation),
+   Quantite INT,
    FOREIGN KEY(IdPlat) REFERENCES Plat(IdPlat),
    FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation)
 );
