@@ -1,6 +1,6 @@
 <?php
     $host="localhost";
-    $nomDB="guinguettesio-main";
+    $nomDB="Guinguette";
     $user="root";
     $pass="";
     $pdo="mysql:host=".$host.";dbname=".$nomDB;
