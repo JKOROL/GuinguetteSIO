@@ -3,7 +3,8 @@ session_start();
 
  try
  {
-     $bdd = new PDO('mysql:host=localhost;dbname=guinguette', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+     include("db.php");
+     require_once("header_connexion.php");
  }
  catch (Exception $e)
  {
@@ -11,7 +12,7 @@ session_start();
  }
 ?>  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" class="background_connexion">
 <head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,43 +22,31 @@ session_start();
 </head>
 
     <body>
-    <img class ="background" src ="images/hero-bg.jpg">
-
-    <nav class="nav-bar">
-        <div class="div-nav-bar">
-        <ul class="list-nav-bar">
-            <li><a  href="index.php" title="home">Accueil</a></li>
-            <li><a  href="animation.php" title="animation">Animation</a></li>
-            <li><a  href="carte.php" title="menu">Menu</a></li>
-            <li><a  href="#works" title="partenaire">Partenaire</a></li>
-            <li><a  href="#contact" title="contact">Contact</a></li>
-        </ul>
+        <a href="index.php">
+            <img class="home-logo" src="images/logo.png" alt="Homepage">
+        </a>
+        <div class="se_connecter"> Connectez-vous afin de profiter de nos services </div>
+        <div class="formulaire">
+            <!-- zone de connexion -->
+            <form method="post" action="connexion.php">
+                <label>Adresse e-mail* :</label>
+                <input type="text" placeholder="Saisir l'adresse email" name="email" required>
+                <label>Mot de passe* :</label>
+                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+                <input type="submit" id='submit' value='Envoyer'></input> 
+                <a href="formulaire_mdp.php" style="text-decoration : none;color:  black;"> Mot de passe oublié ? </a> </br></br>
+                <a href="inscription.php" style="text-decoration : none;color:  black;"> Pour s'inscrire c'est ici ! </a>
+                <?php
+                if(isset($_GET['erreur'])){
+                    $err = $_GET['erreur'];
+                    if($err==1 || $err==2)
+                        echo "<div class='text_erreur'>Utilisateur ou mot de passe incorrect</div>";
+                }
+                ?>
+            </form>
+                
         </div>
-    </nav>
-    <div class="">
-            <a href="index.php">
-                <img class="home-logo" src="images/logo.png" alt="Homepage">
-            </a>
-    </div>     
-       
-    <div class="se_connecter"> Se connecter </div>
-        <form method="post" action="se_connecter.php">
-            <div class="formulaire">
-                <p> <label for="email">Adresse mail <input type="email" name="email" id="email" placeholder="guigui@hotmail.fr"/></label> </p>
-                <p> <label for="mdp">Mot de passe <input type="password" name="password" id="password" placeholder="*********"/></label> </p>   
-                <p> <label for="resteco">Se souvenir de moi ? </label><input type="checkbox" name="resteco" id="resteco" /> </p>
-                <div class="text_center"> 
-                    <div class="submit">
-                        <p><input type="submit" value="Se connecter" /></p>
-                    </div> 
-                </div>   
-                    <p><a href="formulaire_mdp.php" style="text-decoration : none;color:  black;"> Mot de passe oublié ? </a></p>
-                    
-                    <p><a href="inscription.php" style="text-decoration : none;color:  black;"> Pour s'inscrire c'est ici ! </a></p>   
-                </div>  
-            </div>
-        </form>
-</body>
+    </body>
 
 <footer>
     <div class="footer_text_left"> 
@@ -75,12 +64,11 @@ session_start();
         $email = $_POST['email'];
         $password = $_POST['password'];
     }
-    $req = $bdd->prepare('SELECT idUtilisateur, email, password FROM utilisateurs WHERE email = :email');
+    $req = $bdd->prepare('SELECT idUtilisateur, email, password FROM utilisateur WHERE email = :email');
     if (isset($_POST['email']))
     {
         $req->execute(array(
-        'email' => $email));
-        echo $email;
+        'email' => $email));;
     }
     $resultat = $req->fetch();
 
@@ -91,20 +79,20 @@ session_start();
     }
     if (isset($resultat) AND (!$resultat) AND (isset($_POST['password'])))
     {
-        echo '<div class="text_center"> Mauvais identifiant ou mot de passe ! (error 1)</div>';
+        echo '<div class="text_error"> Mauvais identifiant ou mot de passe !</div>';
     } 
     else
     {
         if (isset ($isPasswordCorrect) AND ($isPasswordCorrect))
         {
             $_SESSION['idUtilisateur'] = $resultat['idUtilisateur'];
-            echo 'Connexion réussie, prends donc place..'.
-                '<a href="index.php"> index </a>';
+            echo '<div class="text_reussi">Connexion réussie, prends donc place..</div>';
+            header("Refresh: 2; URL=index.php");
         }
 
-        elseif (isset($_POST['Pwd']))
+        if (isset($_POST['password']) AND (!$isPasswordCorrect))
         {
-            echo 'Mauvais identifiant ou mot de passe ! (error 2)';
+            echo '<div class="text_error"> Mauvais identifiant ou mot de passe !</div>';
             exit;
         }
     }

@@ -46,6 +46,11 @@ $test_dispo = $bdd->query($filtre_dispo);
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/formulaire.css">
 
+     <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <title>Document</title>
 </head>
 <body>
