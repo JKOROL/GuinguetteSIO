@@ -8,6 +8,7 @@
             <li><a class="li-backoffice"  href="menu.php" title="Menu">Menu</a></li>
             <li><a class="li-backoffice"  href="plat.php" title="Plat">Plat</a></li>
             <li><a class="li-backoffice"  href="table.php" title="Table">Table</a></li>
+            <li><a class="li-backoffice"  href="evenement.php" title="Evenement">Evenement</a></li>
         </ul>
     </nav> <!-- end header-nav -->
 </div>
