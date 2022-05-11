@@ -12,11 +12,10 @@ catch (Exception $e)
         die('Erreur : ' . $e->getMessage());
 }
 ?>
-<!DOCTYPE html>
 <!-- class="background_connexion"> -->
 <html lang="en" class="background_connexion">  
 <head> 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/connexion.css">
     <title>Inscription</title>
@@ -36,17 +35,16 @@ catch (Exception $e)
                 $stmt = $bdd->query($sql);
                 $listQst = $stmt->fetchAll(PDO::FETCH_ASSOC);         
             ?>
-            <div class= "">
-                <label>Merci de choisir une question secrète* : </label><select name="qst_secrete" id="qst_secrete"><option value=""> Questions </option>
+            <label>Merci de choisir une question secrète* : </label><select name="qst_secrete" id="qst_secrete"><option value=""> Questions </option>
                 <?php 
-                    foreach($listQst as $curQst){
-                        echo "<option value='".($curQst["idQuestion"])."'";
-                        echo ">".$curQst["libQuestion"]."</option>";
-                    }
-                ?>
-                </select>   
-                <span class="focus"></span>
-            </div> 
+                foreach($listQst as $curQst){
+                    $chien = htmlentities(utf8_encode($curQst["libQuestion"]));
+                    echo "<option value='".($curQst["idQuestion"])."'";
+                    echo ">".$chien."</option>";
+                }
+            ?>
+            </select>   
+            <span class="focus"></span> 
             <div id="rep_secrete">
                 <label>Réponse à la question* :</label>
                 <input type="text" name ="rep_question"></input>
