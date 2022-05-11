@@ -1,5 +1,4 @@
 <?php 
-
 class ticket
 {
     private $IdTicket;
@@ -11,6 +10,7 @@ class ticket
     private $date;
     private $heure;
 
+    
     /*public function __construct(int $IdTicket, int $IdReservation, int $idTicket, string $NomClient, float $prix,array $PlatChoisi, int $table, $date, $heure)
     {
         $this -> idticket = $IdTicket;
@@ -23,20 +23,25 @@ class ticket
         $this -> heure = $heure;
     }*/
 
-    public function getTicket()
+    public function getTicket($idReservation)
     {
+        require("db.php");
+        $req = $bdd -> query("SELECT * FROM reservation WHERE IdReservation = ".$idReservation."")->fetch();
+        $ConsoClient= $bdd -> query("SELECT * FROM consommer")->fetch();
         ?>
         <link rel="stylesheet" href="css/ticket.css">
         <div class="ticket">
             <h1>La Guinguette d'Orléans</h1>
             <p>45 Place du Martroi 45000 Orléans<br> Tel 02 38 63 89 56</p>
             <div class="date"> 
-                <span><?php echo date("d-m-y"); ?></span>
-                <span><?php echo date("H:i:s"); ?></span>
+                <span><?php echo $req[9]; ?></span>
+                <span><?php echo $req[10]; ?></span>
             </div>
-            <h1 >TABLE<?php echo " le numéro de la table avec requête sql ";?></h1>
+            <h1 >TABLE<?php echo $req[6];?></h1>
             <div class="after"></div><br>
-            
+            <div class="commande">
+                <p><span><?php echo $ConsoClient[2]; ?></span></p>
+            </div>
         </div>
        
         <?php
@@ -45,7 +50,11 @@ class ticket
 
 }
 
-$ticket01 = new ticket;
-$ticket01 -> getTicket();
+require("db.php");
+$rep = $bdd -> query("SELECT IdReservation FROM reservation")->fetchAll(PDO::FETCH_ASSOC);
+foreach($rep as $curr_rep){
+    $ticket = new ticket;
+    $ticket -> getTicket($curr_rep['IdReservation']);
+}
 ?>
 

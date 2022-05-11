@@ -66,7 +66,10 @@ CREATE TABLE Reservation(
    NbVehicules INT,
    NbPHandicape INT,
    Allergene VARCHAR(50),
+   NumTable INT(3),
    IdUtilisateur INT NOT NULL,
+   DateJour DATE,
+   DateHeure TIME,
    PRIMARY KEY(IdReservation),
    FOREIGN KEY(IdUtilisateur) REFERENCES Utilisateur(IdUtilisateur)
 );
@@ -104,9 +107,10 @@ CREATE TABLE Choisir(
 );
 
 CREATE TABLE Consommer(
+   IdConsommer INT AUTO_INCREMENT,
    IdPlat INT,
    IdReservation INT,
-   PRIMARY KEY(IdPlat, IdReservation),
+   Quantite INT,
    FOREIGN KEY(IdPlat) REFERENCES Plat(IdPlat),
    FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation)
 );
