@@ -1,6 +1,6 @@
 <?php 
-require_once('header.php'); 
 session_start();
+require_once('header.php'); 
 ?>
 
 
@@ -58,9 +58,9 @@ session_start();
             <div class="header-nav__content">
                 
                 <ul class="header-nav__list">
-                    <li><a class="smoothscroll"  href="index.php" title="home">Accueil</a></li>
-                    <li><a class="smoothscroll"  href="animation.php" title="animation">Animation</a></li>
-                    <li><a class="smoothscroll"  href="carte.php" title="menu">Menu</a></li>
+                    <li><a href="#top" title="home">Accueil</a></li>
+                    <li><a href="animation.php" title="animation">Animation</a></li>
+                    <li><a href="carte.php" title="menu">Menu</a></li>
                     <li><a class="smoothscroll"  href="#works" title="partenaire">Partenaire</a></li>
                     <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
                 </ul>
