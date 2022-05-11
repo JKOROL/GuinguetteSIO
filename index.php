@@ -158,7 +158,7 @@ session_start();
                 <div class="col-4">
                     <div class="col-block item-process" data-aos="fade-up">
                         <div class="item-process__text">
-                            <a href="Animation.html" class="LienImageAbout"><img class="Logo" src="images/Animation.png" alt="Logo Animation"></a>
+                            <a href="Animation.php" class="LienImageAbout"><img class="Logo" src="images/Animation.png" alt="Logo Animation"></a>
                             <p class="LienAbout"><a href="Animation.html" class="LienAbout Lien">Animation</a></p>
                         </div>
                     </div>
