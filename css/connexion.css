@@ -67,14 +67,22 @@ body{
     color: #373F51;
     border: 1px solid #373F51;
 }
+.inscription_entete{
+    padding-left: 45%;
+    padding-right: 45%;
+    color :white;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    font-size: 32px;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .se_connecter{
-    padding-left: 36%;
+    padding-left: 37%;
     padding-right: 33%;
     color :white;
-    padding-top: 2%;
-    padding-bottom: 5%;
-    font-size: 24px;
-    word-wrap: break-word;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    font-size: 26px;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .backoffice nav{
