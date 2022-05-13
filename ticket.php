@@ -1,33 +1,25 @@
 <?php 
 class ticket
 {
-    private $IdTicket;
-    private $IdReservation;
-    private $NomClient;
-    private $prix;
-    private $PlatChoisi;
-    private $table;
-    private $date;
-    private $heure;
-
-    
-    /*public function __construct(int $IdTicket, int $IdReservation, int $idTicket, string $NomClient, float $prix,array $PlatChoisi, int $table, $date, $heure)
+  
+    public static function calculPrixTotal($idReservation)
     {
-        $this -> idticket = $IdTicket;
-        $this -> idreservation = $IdReservation;
-        $this -> nomclient = $NomClient;
-        $this -> prix = $prix;
-        $this -> platchoisi = $PlatChoisi;
-        $this -> table = $table;
-        $this -> date = $date;
-        $this -> heure = $heure;
-    }*/
+        require("db.php");
+        $total = 0;
+        $plats= $bdd -> query("SELECT * FROM consommer INNER JOIN plat WHERE consommer.IdPlat = plat.IdPlat and 
+        IdReservation = ".$idReservation."")->fetchAll(PDO::FETCH_ASSOC);
+        foreach($plats as $curr_plats){
+            $total += $curr_plats['PrixPlat']* $curr_plats['Quantite'];
+        }
+        echo $total." €";
+    }
 
     public function getTicket($idReservation)
     {
         require("db.php");
         $req = $bdd -> query("SELECT * FROM reservation WHERE IdReservation = ".$idReservation."")->fetch();
-        $plats= $bdd -> query("SELECT * FROM consommer INNER JOIN plat WHERE consommer.IdPlat = plat.IdPlat and IdReservation = ".$idReservation."")->fetchAll(PDO::FETCH_ASSOC);
+        $plats= $bdd -> query("SELECT * FROM consommer INNER JOIN plat WHERE consommer.IdPlat = plat.IdPlat and
+        IdReservation = ".$idReservation."")->fetchAll(PDO::FETCH_ASSOC);
         ?>
         <link rel="stylesheet" href="css/ticket.css">
         <div class="ticket">
@@ -39,16 +31,20 @@ class ticket
             </div>
             <h1 >TABLE <?php echo $req[7];?></h1>
             <div class="after"></div><br>
+            <p class = "titre"><strong>Quantité</strong><span><strong>Plats</strong></span><strong>Prix</strong></p>
             <div class="commande">
                 <?php
                 foreach($plats as $curr_plats){
-                    //if(isset($req[$idReservation])){
-                        echo '<p class="consommation"><span>'.$curr_plats['Quantite'].'</span>'.$curr_plats['Libelle'].'<span>'.$curr_plats['PrixPlat'].'</span></p><br>';
-                    //}
+                    echo '<p class="consommation"><span>'.$curr_plats['Quantite'].'</span>'.utf8_encode($curr_plats['Libelle']).
+                    '<span>'.$curr_plats['PrixPlat']." €".'</span></p><br>';
                 }
                 ?>
+            </div> 
+            <div class="after"></div><br>
+            <div class="total">
+                <p><strong>Sous-total :</strong> <?php self::calculPrixTotal($idReservation); ?></p>
             </div>
-        </div>
+        </div><br>
        
         <?php
     }
@@ -57,11 +53,12 @@ class ticket
 }
 
 require("db.php");
-$rep = $bdd -> query("SELECT * FROM reservation INNER JOIN consommer WHERE reservation.IdReservation = consommer.Idreservation")->fetchAll(PDO::FETCH_ASSOC);
-//$choix = $bdd -> query("SELECT * FROM reservation INNER JOIN consommer WHERE reservation.IdReservation = consommer.IdReservation"); 
+$rep = $bdd -> query("SELECT DISTINCT(reservation.IdReservation) FROM reservation INNER JOIN consommer 
+WHERE reservation.IdReservation = consommer.Idreservation")->fetchAll(PDO::FETCH_ASSOC); 
 foreach($rep as $curr_rep){
     $ticket = new ticket;
     $ticket -> getTicket($curr_rep['IdReservation']);
 }
+
 ?>
 
