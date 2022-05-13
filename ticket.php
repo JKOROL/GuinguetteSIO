@@ -27,7 +27,7 @@ class ticket
     {
         require("db.php");
         $req = $bdd -> query("SELECT * FROM reservation WHERE IdReservation = ".$idReservation."")->fetch();
-        $ConsoClient= $bdd -> query("SELECT * FROM consommer")->fetch();
+        $plats= $bdd -> query("SELECT * FROM consommer INNER JOIN plat WHERE consommer.IdPlat = plat.IdPlat and IdReservation = ".$idReservation."")->fetchAll(PDO::FETCH_ASSOC);
         ?>
         <link rel="stylesheet" href="css/ticket.css">
         <div class="ticket">
@@ -37,10 +37,16 @@ class ticket
                 <span><?php echo $req[9]; ?></span>
                 <span><?php echo $req[10]; ?></span>
             </div>
-            <h1 >TABLE<?php echo $req[6];?></h1>
+            <h1 >TABLE <?php echo $req[7];?></h1>
             <div class="after"></div><br>
             <div class="commande">
-                <p><span><?php echo $ConsoClient[2]; ?></span></p>
+                <?php
+                foreach($plats as $curr_plats){
+                    //if(isset($req[$idReservation])){
+                        echo '<p class="consommation"><span>'.$curr_plats['Quantite'].'</span>'.$curr_plats['Libelle'].'<span>'.$curr_plats['PrixPlat'].'</span></p><br>';
+                    //}
+                }
+                ?>
             </div>
         </div>
        
@@ -51,7 +57,8 @@ class ticket
 }
 
 require("db.php");
-$rep = $bdd -> query("SELECT IdReservation FROM reservation")->fetchAll(PDO::FETCH_ASSOC);
+$rep = $bdd -> query("SELECT * FROM reservation INNER JOIN consommer WHERE reservation.IdReservation = consommer.Idreservation")->fetchAll(PDO::FETCH_ASSOC);
+//$choix = $bdd -> query("SELECT * FROM reservation INNER JOIN consommer WHERE reservation.IdReservation = consommer.IdReservation"); 
 foreach($rep as $curr_rep){
     $ticket = new ticket;
     $ticket -> getTicket($curr_rep['IdReservation']);

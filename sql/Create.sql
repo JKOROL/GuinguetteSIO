@@ -107,7 +107,6 @@ CREATE TABLE Choisir(
 );
 
 CREATE TABLE Consommer(
-   IdConsommer INT AUTO_INCREMENT,
    IdPlat INT,
    IdReservation INT,
    Quantite INT,

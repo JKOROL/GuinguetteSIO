@@ -161,8 +161,13 @@ INSERT INTO `questions_secretes` (`idQuestion`, `libQuestion`) VALUES
 (NULL, 'Dans quelle ville se sont rencontrés vos parents ?'), 
 (NULL, 'Qu’est-ce vous vouliez devenir plus grand, lorsque vous étiez enfant ?');
 -- INSERT consommer
-INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (12,31,1);
-INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (11,31,2);
-INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (26,31,1);
-INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (28,31,1);
-INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (32,31,2);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (12,30,1);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (11,30,2);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (26,30,1);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (28,30,1);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (32,30,2);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (13,16,1);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (23,16,2);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (27,16,1);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (28,16,1);
+INSERT INTO `consommer`(`IdPlat`, `IdReservation`, `Quantite`) VALUES (33,16,2);
