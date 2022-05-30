@@ -66,7 +66,10 @@ CREATE TABLE Reservation(
    NbVehicules INT,
    NbPHandicape INT,
    Allergene VARCHAR(50),
+   NumTable INT(3),
    IdUtilisateur INT NOT NULL,
+   DateJour DATE,
+   DateHeure TIME,
    PRIMARY KEY(IdReservation),
    FOREIGN KEY(IdUtilisateur) REFERENCES Utilisateur(IdUtilisateur)
 );

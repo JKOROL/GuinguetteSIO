@@ -3,12 +3,12 @@ session_start();
 
  try
  {
-     include("db.php");
-     require_once("header_connexion.php");
+    include("db.php");
+    require_once("header_connexion.php");
  }
  catch (Exception $e)
  {
-         die('Erreur : ' . $e->getMessage());
+    die('Erreur : ' . $e->getMessage());
  }
 ?>  
 <!DOCTYPE html>

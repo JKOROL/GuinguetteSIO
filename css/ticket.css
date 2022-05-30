@@ -21,3 +21,17 @@
     display: flex;
     justify-content: space-around;
 }
+
+.consommation{
+    display: flex;
+    justify-content: space-around;
+}
+
+.titre{
+    display: flex;
+    justify-content: space-around;
+}
+
+.total p{
+    font-size: 25px;
+}
