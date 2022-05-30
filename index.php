@@ -1,4 +1,7 @@
-<?php require_once('header.php'); ?>
+<?php 
+session_start();
+require_once('header.php'); 
+?>
 
 
 <body id="top">
@@ -22,11 +25,27 @@
             <a href="index.php">
                 <img class="home-logo" src="images/logo.png" alt="Homepage">
             </a>
-            <div class="login">
-                <a href="se_connecter.php">
-                    Se connecter
-                </a>
-            </div>
+                <!-- tester si l'utilisateur est connecté -->
+                <?php
+                echo '<div class="login">';
+                    if(isset($_SESSION['idUtilisateur']) AND ($_SESSION['idUtilisateur'] != 0)){
+                        $user = $_SESSION['idUtilisateur'];
+                        
+                        echo '<a href="deconnexion.php">
+                        Se déconnecter
+                        </a>';
+                    }
+                    else {
+                        echo '<a href="connexion.php">
+                        Se connecter
+                    </a>';
+                    }
+                echo "</div>";
+                ?>
+
+            <!-- si l'user est connecté, afficher la déconnexion  -->
+        
+            
     
         </div> <!-- end header-logo -->
 
@@ -39,9 +58,9 @@
             <div class="header-nav__content">
                 
                 <ul class="header-nav__list">
-                    <li><a class="smoothscroll"  href="index.php" title="home">Accueil</a></li>
-                    <li><a class="smoothscroll"  href="animation.php" title="animation">Animation</a></li>
-                    <li><a class="smoothscroll"  href="carte.php" title="menu">Menu</a></li>
+                    <li><a href="#top" title="home">Accueil</a></li>
+                    <li><a href="animation.php" title="animation">Animation</a></li>
+                    <li><a href="carte.php" title="menu">Menu</a></li>
                     <li><a class="smoothscroll"  href="#works" title="partenaire">Partenaire</a></li>
                     <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
                 </ul>
@@ -94,6 +113,10 @@
                     près d'Orleans en Loiret (45)
                 </h3>
 
+                <div class="reservation">
+                   <a href="reservationC.php"> <button>RÉSERVATION</button></a>
+                </div>
+            
             </div> <!-- end home-content__main -->
 
             <div class="home-content__scroll">
@@ -122,6 +145,8 @@
             </li>
         </ul> <!-- end home-social -->
 
+
+
     </section> <!-- end s-home -->
 
 
@@ -133,7 +158,7 @@
                 <div class="col-4">
                     <div class="col-block item-process" data-aos="fade-up">
                         <div class="item-process__text">
-                            <a href="Animation.html" class="LienImageAbout"><img class="Logo" src="images/Animation.png" alt="Logo Animation"></a>
+                            <a href="Animation.php" class="LienImageAbout"><img class="Logo" src="images/Animation.png" alt="Logo Animation"></a>
                             <p class="LienAbout"><a href="Animation.html" class="LienAbout Lien">Animation</a></p>
                         </div>
                     </div>

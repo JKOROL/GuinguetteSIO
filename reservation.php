@@ -1,6 +1,5 @@
-
 <?php 
-$bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','root','');
+include('db.php');
 
 if(isset($_POST["button"]))
 {
@@ -32,7 +31,7 @@ if(isset($_POST["button"]))
     
 }
 
-$filtre_dispo ="SELECT `IdTable`,`NbSiege` FROM `tablerestaurant` WHERE disponible = 1";
+$filtre_dispo ="SELECT `IdTable`,`NbSiege` FROM `tables` WHERE disponible = 1";
 $test_dispo = $bdd->query($filtre_dispo);
 ?>
 
@@ -67,32 +66,14 @@ $test_dispo = $bdd->query($filtre_dispo);
                 <label for="tel"> Telephone: <input class="input-admin" type="text" name="tel" id="tel" required></label> 
             </p><!-- règle de gestion à ajouter pour numéro de telephone -->
             <p><br>
-                <label for="NbClient"> Nombre de Client:  <select name="NbClient" id="NbClient">
-                <?php
-                    $compteur = 1;
-                    for( $compteur; $compteur<20; $compteur++){
-                    echo  "<option value =".$compteur.">".$compteur."</option>";
-                    }
-                    
-                ?></select></label>
-                <label for="NbVehicule"> Nombre de Véhicule: <select name="NbVehicule" id="NbVehicule">
-                <?php
-                $compteur = 1;
-                for( $compteur; $compteur<20; $compteur++){
-                    echo  "<option value =".$compteur.">".$compteur."</option>";
-                }
-                
-                ?></select></label>
+                <label for="NbClient"> Nombre de Client:</label>
+                <input type="number" name="NbClient" id="NbClient" class="input-number" value="1">
+                <label for="NbVehicule"> Nombre de Véhicule:</label>
+                <input type="number" name="NbVehicule" id="NbVehicule" class="input-number" value="0">
             </p><br>
             <p>
-                <label for="NbHandi"> Nombre d'Handicapé: <select name="NbHandi" id="NbHandi">
-                <?php
-                $compteur = 0;
-                for( $compteur; $compteur<20; $compteur++){
-                    echo  "<option value =".$compteur.">".$compteur."</option>";
-                }
-                
-                ?></select></label>
+                <label for="NbHandi"> Nombre d'Handicapé:</label>
+                <input type="number" name="NbHandi" id="NbHandi" class="input-number" value="0">
                 <label for="Allergene"> Allergie: <input class="input-admin" type="text" name="Allergene" id="Allergene"></label>
             </p><br>
             <div id="Table">
@@ -119,6 +100,6 @@ $test_dispo = $bdd->query($filtre_dispo);
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
  crossorigin=""></script>
-<script src="client.js"></script>
+<script src="reservation.js"></script>
 </body>
 </html>

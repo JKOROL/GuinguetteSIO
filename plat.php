@@ -1,5 +1,5 @@
 <?php 
-$bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','root','');
+require('db.php')
 if(isset($_POST))
 {
     if(isset($_POST["libelle_plat"]) && isset($_POST["prix"]))
