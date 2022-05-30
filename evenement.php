@@ -17,7 +17,7 @@ if(isset($_POST["button"]))
 {
     if(isset($_POST))
     {
-        $req="INSERT INTO evenement (NomEvent , NomOrganisateur, nbParticipant VALUES('".$_POST["NomEvent"]."',".$_POST["NomOrganisateur"].",".$_POST["nbParticipant"]."')";
+        $req="INSERT INTO evenement (NomEvent , NomOrganisateur, nbParticipant) VALUES('".$_POST["NomEvent"]."','".$_POST["NomOrganisateur"]."',".$_POST["nbParticipant"].")";
         $test=$bdd->exec($req);
                 
         
@@ -84,8 +84,11 @@ if(isset($_POST["button"]))
             <br>
             <input class="form-button" type="submit" name="button" id="button" value="Ajouter">
         </form>
+        
+        
     </div>
 </div>
+<?php echo $req; ?>
 
 </body>
 </html>
