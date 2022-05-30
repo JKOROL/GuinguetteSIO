@@ -33,12 +33,19 @@ CREATE TABLE Tables(
    Disponible BOOLEAN,
    PRIMARY KEY(IdTable)
 );
-
+CREATE TABLE questions_secretes(
+   idQuestion INT AUTO_INCREMENT,
+   libQuestion VARCHAR(250),
+   PRIMARY KEY(idQuestion)
+);
 CREATE TABLE Utilisateur(
    idUtilisateur INT AUTO_INCREMENT,
    Email VARCHAR(50),
-   Password VARCHAR(150),
-   PRIMARY KEY(idUtilisateur)
+   password VARCHAR(150),
+   repQuestion VARCHAR(150),
+   questionSec INT(11),
+   PRIMARY KEY(idUtilisateur),
+   FOREIGN KEY (questionSec) REFERENCES questions_secretes(idQuestion)
 );
 
 CREATE TABLE Plat(
@@ -91,7 +98,7 @@ CREATE TABLE Reserver(
 CREATE TABLE Choisir(
    IdMenu INT,
    IdReservation INT,
-   PRIMARY KEY(IdMenu, IdReservation),
+   Quantite INT,
    FOREIGN KEY(IdMenu) REFERENCES Menu(IdMenu),
    FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation)
 );
@@ -99,7 +106,7 @@ CREATE TABLE Choisir(
 CREATE TABLE Consommer(
    IdPlat INT,
    IdReservation INT,
-   PRIMARY KEY(IdPlat, IdReservation),
+   Quantite INT,
    FOREIGN KEY(IdPlat) REFERENCES Plat(IdPlat),
    FOREIGN KEY(IdReservation) REFERENCES Reservation(IdReservation)
 );

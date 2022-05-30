@@ -1,34 +1,112 @@
-
 body{
     margin : 0;
     font-family: "Nunito Sans", sans-serif;
    overflow : hidden;
-   
 }
-form {
-        position: relative;
-        top: 150px;
-        display: flex;
-        justify-content: center;
+.formulaire a:hover{
+    background-color: gold;
 }
-footer{
-    background: #ffffe0;
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:50px;
-    
-}
-.background {
- position : fixed;
+.background_connexion {
+    background: url("../images/hero-bg.jpg") no-repeat center center fixed; 
+    background-color: #373F51;;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .home-logo {
-  margin-top: -50px;
-  max-width: 300px !important;
-  height: 100px;
-  margin-left: 30px;
+    margin-top: -50px;
+    max-width: 300px !important;
+    height: 100px;
+    margin-left: 30px;
+}
+.formulaire{
+    margin-bottom :2%;
+}
+.formulaire form {
+    width:400px;
+    padding: 30px;
+    border: 2px solid #f1f1f1;
+    border-radius: 1%;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    margin:0 auto;
+    padding: 30px;
+    border-radius: 1%;  
 }
 
+/* Full-width inputs */
+.formulaire input[type=text], .formulaire input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.formulaire a{
+    font-size: 14Px;
+}
+/* Set a style for all buttons */
+.formulaire input[type=submit] {
+    background-color: #373F51;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.formulaire input[type=submit]:hover {
+    background-color: white;
+    color: #373F51;
+    border: 1px solid #373F51;
+}
+.se_connecter{
+    padding-left: 36%;
+    padding-right: 33%;
+    color :white;
+    padding-top: 5%;
+    font-size: 24px;
+    word-wrap: break-word;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.backoffice nav{
+    background-color: black;
+}
+.backoffice a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+.backoffice a:hover{
+    text-decoration: underline;
+}
+.backoffice li
+{
+    list-style: none;
+}
+.ul-backoffice{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+footer{
+    background: black;
+    position: absolute;
+bottom:0;
+    width:100%;
+    height:50px;
+    color: white;
+}
 .footer_text_left {
     float : left;
     padding-top : 0.9%;
@@ -38,74 +116,64 @@ footer{
     float : right;
     padding-right : 10px;
 }
-
-.formulaire{
-    border: thick double #5E3080;;
-    background-color :  #ffffe0;
-    width: 400px;
-    text-align: center;
-    border-radius: 10px;  
-}
-.list-nav-bar{
-    display: flex;
-    list-style:none;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
-    background-color: #ffffe0;
-    width: 100%;
-    padding-left: 0;
-    margin-top: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-   
-    position: relative;
-
-}
-
-.list-nav-bar li a {
-    color: #5E3080;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-.list-nav-bar li a:hover {
-    color: #5E3080;
-}
-.list-nav-bar li{
-    text-decoration: none;
-}
-
-.btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
-    display: inline-block;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: .3rem;
-    line-height: 3rem;
-    padding: 0 2rem;
-    margin: 0 0.2rem 1rem 0;
-    color: #000000;
-    text-decoration: none;
-    text-align: center;
-    white-space: nowrap;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #c5c5c5;
-    border: 0.2rem solid #c5c5c5;
-}
-
-.text_center{
-    text-align: center;
-    
-}
-.se_connecter{
-
+.inscription_entete{
+    padding-left: 45%;
+    padding-right: 45%;
     color :white;
-    position: relative;
-    top: 145px;
-    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    font-size: 32px;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.mdp_oubli{
+    padding-left: 43%;
+    padding-right: 33%;
+    color :white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 24px;
+    word-wrap: break-word;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#rep_secrete{
+    display: none;
+}
+#qst_secrete  {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: black;
+
+    margin-top: 2%;
 }
 
+.text_error{
+    width:400px;
+    margin:0 auto;
 
+    border-radius: 1%;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
 
+    padding: 30px;
+    border: 2px solid #f1f1f1;
+    border-radius: 1%;
+    border-color: red;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.text_reussi{
+    width:400px;
+    margin:0 auto;
+    border-radius: 1%;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: green;
+    padding: 30px;
+    border: 2px solid #f1f1f1;
+    border-radius: 1%;
+    border-color: green;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);  
+}

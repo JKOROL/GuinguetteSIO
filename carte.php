@@ -1,6 +1,6 @@
 <?php 
 
-$bdd = new PDO('mysql:host=localhost;dbname=guinguettesio-main;charset=utf8','root','');
+include('db.php');
 
 ?>
 <!DOCTYPE html>
