@@ -17,7 +17,7 @@ if(isset($_POST["button"]))
 {
     if(isset($_POST))
     {
-        $req="INSERT INTO evenement (NomEvent , NomOrganisateur, Jdate, Ttime, nbParticipant) VALUES('".$_POST["NomEvent"]."','".$_POST["NomOrganisateur"]."','".$_POST["date"]."','".$_POST["time"]."',".$_POST["nbParticipant"].")";
+        $req="INSERT INTO evenement (NomEvent , NomOrganisateur, Date, Heur, nbParticipant) VALUES('".$_POST["NomEvent"]."','".$_POST["NomOrganisateur"]."','".$_POST["Jdate"]."','".$_POST["Ttime"]."',".$_POST["nbParticipant"].")";
         $test=$bdd->exec($req);
                 
         
