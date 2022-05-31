@@ -17,7 +17,7 @@ if(isset($_POST["button"]))
 {
     if(isset($_POST))
     {
-        $req="INSERT INTO evenement (NomEvent , NomOrganisateur, nbParticipant) VALUES('".$_POST["NomEvent"]."','".$_POST["NomOrganisateur"]."',".$_POST["nbParticipant"].")";
+        $req="INSERT INTO evenement (NomEvent , NomOrganisateur, date, time, nbParticipant) VALUES('".$_POST["NomEvent"]."','".$_POST["NomOrganisateur"]."','".$_POST["date"]."','".$_POST["time"]."',".$_POST["nbParticipant"].")";
         $test=$bdd->exec($req);
                 
         
@@ -95,7 +95,7 @@ if(isset($_POST["button"]))
             </div>
                 
             <div class="input-container ic2">
-                <input id="date" class="input" type="time" name="appt" min="09:00" max="18:00" placeholder=" " />
+                <input id="time" class="input" type="time" name="appt" min="09:00" max="18:00" placeholder=" " />
             </div>
                 
             <div class="input-container ic2">
