@@ -54,7 +54,7 @@ if(isset($_POST["button"]))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/formulaire.css">
+    <link rel="stylesheet" href="css/formulaire-sibel.css">
 
      <!-- favicons
     ================================================== -->
@@ -70,23 +70,72 @@ if(isset($_POST["button"]))
     <a href="index.php" class="link-logo">
         <img class="home-logo" src="images/logo.png" alt="Homepage">
     </a>
-    <div class="formulaire">
-        <h2>Formulaire de création d'événement</h2>
-        <form action="evenement.php" method="POST">
-            <p>
-                <label for="NomEvent"> Nom: <input class="input-admin" type="text" name="NomEvent" id="NomEvent" required></label>
-                <label for="NomOrganisateur"> Organisateur: <input class="input-admin" type="text" name="NomOrganisateur" id="NomOrganisateur" required></label> 
-            </p>
-            <p><br>
-                <label for="nbParticipant"> Nombre de participant:</label>
-                <input type="number" name="nbParticipant" id="nbParticipant" class="input-number" value="1">
-            </p><br>
-            <br>
-            <input class="form-button" type="submit" name="button" id="button" value="Ajouter">
-        </form>
-        
-        
+
+    <div class="two-form">
+
+        <div class="form-1">
+            <div class="formulaire-creat-event">
+            <form action="evenement.php" method="POST">
+            <div class="title">New Event</div>
+            <div class="subtitle">Formulaire de création d'évenement</div>
+            <div class="input-container ic1">
+                <input id="NomEvent" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="NomEvent" class="placeholder">Nom evenement</label>
+            </div>
+            
+            <div class="input-container ic2">
+                <input id="NomOrganisateur" class="input" type="text" placeholder=" " />
+                <div class="cut cut-short"></div>
+                <label for="NomOrganisateur" class="placeholder">Organisateur</>
+            </div>
+                
+            <div class="input-container ic2">
+                <input id="date" class="input" type="date" min="2021-03-01" max="2031-01-01" placeholder=" " />
+            </div>
+                
+            <div class="input-container ic2">
+                <input id="date" class="input" type="time" name="appt" min="09:00" max="18:00" placeholder=" " />
+            </div>
+                
+            <div class="input-container ic2">
+                <input id="nbParticipant" class="input" type="number" placeholder=" " />
+                <div class="cut cut-short"></div>
+                <label for="nbParticipant" class="placeholder">Nombre de participant</>
+            </div>
+                
+                
+            <button type="text" class="submit">Ajouter</button>
+
+        </div>
+
+        <div class="form-2">
+            <div class="formulaire-list-event">
+                <div class="title">List Event</div>
+                <div class="subtitle">Tous les évenements</div>
+
+                <div class="input-container-list ic1" style="background-color:#eee;border-radius:20px;margin:10px">
+                    <div style="margin-left:20px;padding-top:10px;padding-bottom:10px" class="inputList">
+                        Nom de l'évenement : <br>
+                        Organisateur : <br>
+                        Date : <br>
+                        Heur : <br>
+                        Nombre de participant :
+                       
+                        <div class="delete-icon" style="justify-content:end; display:flex;margin-right:20px;"><img style="height:20px; cursor:pointer" src="images/poubelle.png"></div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+           
+
+        </div>
     </div>
+
+    </div>
+
+
 </div>
 <?php echo $req; ?>
 
